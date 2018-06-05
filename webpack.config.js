@@ -1,4 +1,4 @@
-var path = require("path");
+const path = require('path');
 
 module.exports = {
   context: __dirname,
@@ -8,7 +8,7 @@ module.exports = {
     filename: "bundle.js"
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: [/\.jsx?$/, /\.js?$/],
         exclude: /node_modules/,
