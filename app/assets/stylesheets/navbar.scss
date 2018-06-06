@@ -1,0 +1,91 @@
+$textcolor: #b5b5b5;
+$searchcolor: #efefef;
+$ashgrey: #888888;
+
+.nav-bar {
+  background: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  padding: 4px 16px;
+  box-sizing: border-box;
+}
+
+.nav-bar div {
+  cursor: pointer;
+  font-size: 16px;
+  color: $textcolor;
+}
+
+.nav-bar div:not(:first-child) {
+  width: 76px;
+  height: 43px;
+  text-align: center;
+  padding-left: 4px;
+  padding-right: 4px;
+  line-height: 43px;
+
+  display: block;
+}
+
+.logout-button {
+  padding-left: 10px;
+}
+
+//search input 10 padding left
+
+#kappa-main {
+  height: 28px;
+  width: 28px;
+}
+
+#search-logo {
+  padding-left: 15px;
+}
+
+#search-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 700px;
+  height: 40px;
+  background: $searchcolor;
+  border-radius: 4px;
+}
+
+#search-placeholder input {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  text-align: left;
+  height: 40px;
+  width: 80%;
+  padding-left: 10px;
+}
+
+#search-placeholder ::placeholder {
+  color: $ashgrey;
+  font-weight: 500;
+}
+
+.logo-container {
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// .nav-logo-circle {
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-end;
+//   border: 2px solid $twitchpurple;
+//   height: 28px;
+//   width: 28px;
+//   margin-right: 5px;
+//   box-sizing: border-box;
+//   border-radius: 50px;
+// }

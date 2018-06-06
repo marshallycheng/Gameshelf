@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   attr_reader :password
 
-  validates :password_digest, :session_token, :password_digest, presence: true
-  validates :username, uniqueness: true
+  validates :password_digest, :session_token, :username, presence: true
+  validates :username, uniqueness: true, length: {maximum: 16}
   validates :password, length: { minimum: 6}, allow_nil: true
 
   before_validation :ensure_session_token
@@ -23,7 +23,7 @@ class User < ApplicationRecord
 
   def reset_session_token!
     self.session_token = SecureRandom.urlsafe_base64
-    self.save!
+    self.save
     self.session_token
   end
 

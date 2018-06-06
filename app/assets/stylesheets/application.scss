@@ -1,0 +1,152 @@
+
+$black: black;
+$white: white;
+$antiquewhite: antiquewhite;
+$navbuttoncolor: #efefef;
+$lightgrey: rgb(204, 204, 204);
+$darkgrey: rgb(85, 85, 85);
+$roboto: 'Roboto', sans-serif;
+$inputcolor: rgb(181, 181, 181);
+$twitchpurple: #6441a5;
+$orange: #e3780c;
+
+@import 'reset.scss';
+@import 'navbar.scss';
+
+body {
+  font-family: $roboto;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-container {
+  font-size: 28px;
+  color: $darkgrey;
+  font-weight: bold;
+  background:
+    /* top, transparent black, faked with gradient */
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    /* bottom, image */
+    url('https://www.technobuffalo.com/wp-content/uploads/2016/06/Legend-of-Zelda-Breath-of-the-Wild-Artwork-08.jpg');
+  background-size: cover;
+  background-repeat: repeat-x;
+  animation: animate-background linear 15s infinite;
+  width: 100%;
+  margin: 0px auto;
+  overflow: hidden;
+  height: 100vh;
+}
+
+@keyframes animate-background {
+  from { background-position: 0px; }
+  to { background-position: -300px; }
+}
+
+.login-form-box {
+  min-height: 460px;
+  height: auto;
+  width: 400px;
+  background-color: $white;
+  align-self: center;
+  margin-top: 100px;
+  border-radius: 8px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.80;
+}
+
+
+.login-form-box h3 {
+  color: $lightgrey;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.nav-button {
+  align-self: flex-end;
+  cursor: pointer;
+  height: 36px;
+  width: 130px;
+  box-sizing: border-box;
+  padding: 8px 14px;
+  border-radius: 4px;
+  background-color: $navbuttoncolor;
+  vertical-align: middle;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 40px 25px 0px 0px;
+  color: $darkgrey;
+}
+
+#kappa {
+  height: 50px;
+  width: 50px;
+  margin: 35px 0 20px 0;
+}
+
+.login-input {
+  height: 40px;
+  width: 268px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid $inputcolor;
+  color: #555;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+::placeholder {
+  color: $inputcolor;
+}
+
+.session-button {
+  background-color: $twitchpurple;
+  color: $white;
+  box-sizing: border-box;
+  width: 268px;
+  height: 36px;
+  margin-top: 10px;
+  padding: 0 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+#demo-login {
+  margin-top: 5px;
+}
+
+#or {
+  margin-top: 8px;
+  font-size: 12px;
+}
+.errors-list {
+  list-style: none;
+}
+
+.div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.error {
+  font-size: 12px;
+  color: $orange;
+  font-weight: 400;
+  margin-top: 5px;
+}

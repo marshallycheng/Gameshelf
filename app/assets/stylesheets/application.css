@@ -1,15 +1,198 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+.nav-bar {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  padding: 4px 16px;
+  box-sizing: border-box; }
+
+.nav-bar div {
+  cursor: pointer;
+  font-size: 16px;
+  color: #b5b5b5; }
+
+.nav-bar div:not(:first-child) {
+  width: 76px;
+  height: 43px;
+  text-align: center;
+  padding-left: 4px;
+  padding-right: 4px;
+  line-height: 43px;
+  display: block; }
+
+.logout-button {
+  padding-left: 10px; }
+
+#kappa-main {
+  height: 28px;
+  width: 28px; }
+
+#search-logo {
+  padding-left: 15px; }
+
+#search-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 700px;
+  height: 40px;
+  background: #efefef;
+  border-radius: 4px; }
+
+#search-placeholder input {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  text-align: left;
+  height: 40px;
+  width: 80%;
+  padding-left: 10px; }
+
+#search-placeholder ::placeholder {
+  color: #888888;
+  font-weight: 500; }
+
+.logo-container {
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+body {
+  font-family: "Roboto", sans-serif; }
+
+.login-form-container {
+  display: flex;
+  flex-direction: column; }
+
+.login-form-container {
+  font-size: 28px;
+  color: #555555;
+  font-weight: bold;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://www.technobuffalo.com/wp-content/uploads/2016/06/Legend-of-Zelda-Breath-of-the-Wild-Artwork-08.jpg");
+  background-size: cover;
+  background-repeat: repeat-x;
+  animation: animate-background linear 15s infinite;
+  width: 100%;
+  margin: 0px auto;
+  overflow: hidden;
+  height: 100vh; }
+
+@keyframes animate-background {
+  from {
+    background-position: 0px; }
+  to {
+    background-position: -300px; } }
+.login-form-box {
+  min-height: 460px;
+  height: auto;
+  width: 400px;
+  background-color: white;
+  align-self: center;
+  margin-top: 100px;
+  border-radius: 8px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.80; }
+
+.login-form-box h3 {
+  color: #cccccc;
+  font-size: 18px;
+  margin-bottom: 15px; }
+
+.nav-button {
+  align-self: flex-end;
+  cursor: pointer;
+  height: 36px;
+  width: 130px;
+  box-sizing: border-box;
+  padding: 8px 14px;
+  border-radius: 4px;
+  background-color: #efefef;
+  vertical-align: middle;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 40px 25px 0px 0px;
+  color: #555555; }
+
+#kappa {
+  height: 50px;
+  width: 50px;
+  margin: 35px 0 20px 0; }
+
+.login-input {
+  height: 40px;
+  width: 268px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid #b5b5b5;
+  color: #555;
+  font-weight: 400;
+  margin-top: 10px; }
+
+::placeholder {
+  color: #b5b5b5; }
+
+.session-button {
+  background-color: #6441a5;
+  color: white;
+  box-sizing: border-box;
+  width: 268px;
+  height: 36px;
+  margin-top: 10px;
+  padding: 0 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 400; }
+
+#demo-login {
+  margin-top: 5px; }
+
+#or {
+  margin-top: 8px;
+  font-size: 12px; }
+
+.errors-list {
+  list-style: none; }
+
+.div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center; }
+
+.error {
+  font-size: 12px;
+  color: #e3780c;
+  font-weight: 400;
+  margin-top: 5px; }
+
+/*# sourceMappingURL=application.css.map */
