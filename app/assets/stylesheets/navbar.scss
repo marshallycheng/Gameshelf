@@ -14,13 +14,13 @@ $searchborder: #8ebffd;
   box-sizing: border-box;
 }
 
-.nav-bar div {
+.nav-bar div, .link {
   cursor: pointer;
   font-size: 16px;
   color: $textcolor;
 }
 
-.nav-bar div:not(:first-child) {
+.nav-bar div:not(:first-child), .nav-bar .link:not(:first-child) {
   width: 76px;
   height: 43px;
   text-align: center;
@@ -28,6 +28,7 @@ $searchborder: #8ebffd;
   padding-right: 4px;
   line-height: 43px;
   display: block;
+  text-decoration: none;
 }
 
 .logout-button {
@@ -45,8 +46,6 @@ $searchborder: #8ebffd;
   position: relative;
   left: 5px;
 }
-
-
 
 #search-placeholder {
   display: flex;
@@ -89,7 +88,7 @@ $searchborder: #8ebffd;
   align-items: center;
 }
 
-.discover-link:hover, .github-link:hover,
+.discover-link:hover, .github-link:hover, .link:hover,
 .profile-link:hover, .logout-button:hover{
   background: $searchcolor;
   border-radius: 25px;
@@ -98,15 +97,3 @@ $searchborder: #8ebffd;
 .search-focus {
   border: 4px solid $searchborder;
 }
-
-// .nav-logo-circle {
-//   display: flex;
-//   align-items: center;
-//   justify-content: flex-end;
-//   border: 2px solid $twitchpurple;
-//   height: 28px;
-//   width: 28px;
-//   margin-right: 5px;
-//   box-sizing: border-box;
-//   border-radius: 50px;
-// }

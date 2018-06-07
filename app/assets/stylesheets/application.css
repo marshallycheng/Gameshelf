@@ -26,19 +26,20 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   padding: 4px 0px;
   box-sizing: border-box; }
 
-.nav-bar div {
+.nav-bar div, .link {
   cursor: pointer;
   font-size: 16px;
   color: #b5b5b5; }
 
-.nav-bar div:not(:first-child) {
+.nav-bar div:not(:first-child), .nav-bar .link:not(:first-child) {
   width: 76px;
   height: 43px;
   text-align: center;
   padding-left: 4px;
   padding-right: 4px;
   line-height: 43px;
-  display: block; }
+  display: block;
+  text-decoration: none; }
 
 .logout-button {
   padding-left: 10px; }
@@ -86,7 +87,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   justify-content: center;
   align-items: center; }
 
-.discover-link:hover, .github-link:hover,
+.discover-link:hover, .github-link:hover, .link:hover,
 .profile-link:hover, .logout-button:hover {
   background: #efefef;
   border-radius: 25px; }
