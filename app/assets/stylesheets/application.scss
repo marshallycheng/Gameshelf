@@ -38,7 +38,7 @@ body {
     url('https://i.imgur.com/qyFRZoK.jpg');
   background-size: cover;
   background-repeat: repeat-x;
-  animation: animate-background linear 16s infinite;
+  animation: animate-background linear 16s infinite alternate;
   width: 100%;
   margin: 0px auto;
   overflow: hidden;
