@@ -12,6 +12,18 @@ class NavBar extends React.Component {
     <Redirect to='/'/>
   }
 
+  addSearchBorder(){
+    const search = document.getElementById('search-placeholder');
+
+    search.classList.add('search-focus');
+  }
+
+  removeSearchBorder(){
+    const search = document.getElementById('search-placeholder');
+
+    search.classList.remove('search-focus');
+  }
+
   render(){
     return (
       <div className="nav-bar">
@@ -22,9 +34,9 @@ class NavBar extends React.Component {
 
 
 
-        <div id="search-placeholder">
+        <div id="search-placeholder" onFocus={this.addSearchBorder} onBlur={this.removeSearchBorder}>
           {searchIcon}
-          <input type="text" placeholder="Search"/>
+          <input type="text" maxLength="100" placeholder="Search"/>
 
         </div>
 

@@ -48,20 +48,18 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   width: auto; }
 
 #search-logo {
-  padding-left: 15px; }
+  position: relative;
+  left: 5px; }
 
 #search-placeholder {
   display: flex;
   align-items: center;
   justify-content: left;
   cursor: default;
-  width: 700px;
+  width: 1200px;
   height: 40px;
   background: #efefef;
   border-radius: 4px; }
-
-#search-placeholder:focus {
-  border: 4px solid blue; }
 
 #search-placeholder input {
   background: transparent;
@@ -69,12 +67,17 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-size: 16px;
   text-align: left;
   height: 40px;
-  width: 93%;
-  padding-left: 10px; }
+  width: 100%;
+  padding-left: 15px;
+  outline: none; }
 
 #search-placeholder ::placeholder {
   color: #888888;
   font-weight: 500; }
+
+#search-placeholder .search-logo-container {
+  display: flex;
+  background: none; }
 
 .logo-container {
   height: 48px;
@@ -87,6 +90,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .profile-link:hover, .logout-button:hover {
   background: #efefef;
   border-radius: 25px; }
+
+.search-focus {
+  border: 4px solid #8ebffd; }
 
 body {
   font-family: "Roboto", sans-serif; }
