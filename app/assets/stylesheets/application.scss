@@ -33,20 +33,20 @@ body {
       rgba(0, 0, 0, 0.5)
     ),
     /* bottom, image */
-    url('https://www.technobuffalo.com/wp-content/uploads/2016/06/Legend-of-Zelda-Breath-of-the-Wild-Artwork-08.jpg');
+    url('https://i.imgur.com/qyFRZoK.jpg');
   background-size: cover;
-  background-repeat: repeat-x;
-  animation: animate-background linear 15s infinite;
+  // background-repeat: repeat-x;
+  // animation: animate-background linear 40s infinite;
   width: 100%;
   margin: 0px auto;
   overflow: hidden;
   height: 100vh;
 }
-
-@keyframes animate-background {
-  from { background-position: 0px; }
-  to { background-position: -300px; }
-}
+//
+// @keyframes animate-background {
+//   from { background-position: 0px; }
+//   to { background-position: -1800px; }
+// }
 
 .login-form-box {
   min-height: 460px;
