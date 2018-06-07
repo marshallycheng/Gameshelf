@@ -7,7 +7,6 @@ class GameShow extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchGame(this.props.gameId);
   }
 

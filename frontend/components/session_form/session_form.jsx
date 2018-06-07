@@ -39,6 +39,7 @@ class SessionForm extends React.Component {
 		  setTimeout(() => {
 			  document.getElementsByClassName('login-form-container')[0].style.background = "url(" + this.bgImageArray[k] + ") no-repeat center center fixed";
 			  document.getElementsByClassName('login-form-container')[0].style.backgroundSize ="150% 150%";
+			  document.getElementsByClassName('login-form-container')[0].style.backgroundPosition = "0px";
 		    if ((k + 1) === this.bgImageArray.length) {
           setTimeout(() =>  this.backgroundSequence(), (this.secs * 1000))
         } else {

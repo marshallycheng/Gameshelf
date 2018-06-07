@@ -1,1 +1,1 @@
-json.partial! 'game', game: @game
+json.partial! '/api/games/game', game: @game
