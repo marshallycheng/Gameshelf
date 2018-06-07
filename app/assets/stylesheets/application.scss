@@ -18,6 +18,7 @@ body {
   font-family: $roboto;
 }
 
+
 .login-form-container {
   display: flex;
   flex-direction: column;
@@ -36,18 +37,19 @@ body {
     /* bottom, image */
     url('https://i.imgur.com/qyFRZoK.jpg');
   background-size: cover;
-  // background-repeat: repeat-x;
-  // animation: animate-background linear 40s infinite;
+  background-repeat: repeat-x;
+  animation: animate-background linear 16s infinite;
   width: 100%;
   margin: 0px auto;
   overflow: hidden;
   height: 100vh;
+  transition: 4s;
 }
-//
-// @keyframes animate-background {
-//   from { background-position: 0px; }
-//   to { background-position: -1800px; }
-// }
+
+@keyframes animate-background {
+  from { background-position: 0px; }
+  to { background-position: -400px; }
+}
 
 .login-form-box {
   min-height: 460px;
@@ -151,3 +153,6 @@ body {
   font-weight: 400;
   margin-top: 5px;
 }
+
+
+// Cross-fade background transition

@@ -26,3 +26,5 @@ export const searchIcon = <svg className="_rw _5l _rx _27" height="22" width="22
   </path>
 
 </svg>;
+
+export const profileIcon = <img className="profile-icon" src='https://s.pinimg.com/images/user/default_75.png' />;

@@ -11,6 +11,7 @@ import {
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import GameIndexContainer from './game_index/game_index_container';
+import GameShowContainer from './game_show/game_show_container';
 import { AuthRoute, ProtectedRoute} from '../util/route_util';
 
 
@@ -21,6 +22,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <ProtectedRoute exact path="/games/:gameId" component={GameShowContainer}/>
       <ProtectedRoute exact path="/" component={GameIndexContainer} />
       <Redirect to="/"></Redirect>
     </Switch>

@@ -3,9 +3,9 @@ import React from 'react';
 const GameIndexItem = ({game}) => {
 
   return (
-    <li>
+    <div className="game-list-item">
       <img className="game-cover-art" src={`${game.image_url}`}/>
-    </li>
+    </div>
   );
 };
 

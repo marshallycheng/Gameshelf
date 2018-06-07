@@ -40,7 +40,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   padding-right: 4px;
   line-height: 43px;
   display: block;
-  text-decoration: none; }
+  text-decoration: none;
+  overflow: hidden; }
 
 .logout-button {
   padding-left: 10px; }
@@ -101,9 +102,44 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .search-focus {
   border: 4px solid #8ebffd; }
 
+.profile-icon {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  top: 5px; }
+
 .game-list {
-  background: red;
-  width: 500px; }
+  margin-top: 12px;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.game-cover-art {
+  width: 240px;
+  height: 315px;
+  border-radius: 8px; }
+
+.game-list-item {
+  display: inline-block;
+  padding: 24px 12px; }
+
+.game-cover-art:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.5), 0 2px 2px -2px rgba(0, 0, 0, 0.05), 0 1px 4px 0 rgba(0, 0, 0, 0.05);
+  position: relative;
+  cursor: zoom-in; }
+
+.game-discover-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.games-index-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
 
 body {
   font-family: "Roboto", sans-serif; }
@@ -118,11 +154,19 @@ body {
   font-weight: bold;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.imgur.com/qyFRZoK.jpg");
   background-size: cover;
+  background-repeat: repeat-x;
+  animation: animate-background linear 16s infinite;
   width: 100%;
   margin: 0px auto;
   overflow: hidden;
-  height: 100vh; }
+  height: 100vh;
+  transition: 4s; }
 
+@keyframes animate-background {
+  from {
+    background-position: 0px; }
+  to {
+    background-position: -400px; } }
 .login-form-box {
   min-height: 460px;
   height: auto;

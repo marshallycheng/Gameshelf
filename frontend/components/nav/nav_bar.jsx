@@ -1,5 +1,5 @@
 import React from 'react';
-import {mainLogo, searchIcon} from '../logo';
+import {mainLogo, searchIcon, profileIcon} from '../logo';
 import { Redirect, Link, NavLink } from 'react-router-dom';
 
 
@@ -37,7 +37,7 @@ class NavBar extends React.Component {
 
         <NavLink to="/" className='link' activeClassName="active">Discover</NavLink>
         <div className='github-link' onClick={this.goGithub}>Github</div>
-        <NavLink to="/profile" className='link' activeClassName="active">Profile</NavLink>
+        <NavLink to="/profile" className='link profile-link' activeClassName="active">{profileIcon} Profile</NavLink>
 
         <div className="logout-button" onClick={() => this.props.logout()}>
           Log out

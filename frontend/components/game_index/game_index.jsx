@@ -5,9 +5,6 @@ import GameIndexItem from './game_index_item';
 class GameIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-
-    };
   }
 
   componentDidMount() {
@@ -21,11 +18,13 @@ class GameIndex extends React.Component {
       return <GameIndexItem key={game.id} game={game} />;
     });
     return (
-      <div>
+      <div className="game-discover-page">
         <NavBarContainer />
-        <ul className="game-list">
-          {allTheGames}
-        </ul>
+        <div className="games-index-content">
+          <div className="game-list">
+            {allTheGames}
+          </div>
+        </div>
       </div>
     );
   }

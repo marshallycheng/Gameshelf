@@ -1,4 +1,50 @@
 .game-list{
-  background: red;
-  width: 500px;
+  // background: $antiquewhite;
+  margin-top: 12px;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game-cover-art {
+  width: 240px;
+  height: 315px;
+  border-radius: 8px;
+  // display: inline;
+}
+
+.game-list-item {
+  display: inline-block;
+  padding: 24px 12px;
+}
+
+.game-list-item:hover {
+  // background: $searchcolor;
+  // border-radius: 8px;
+  // padding: 8px;
+
+}
+
+.game-cover-art:hover {
+  transform: scale(1.05);
+  box-shadow:
+  0 2px 4px -1px rgba(0,0,0,0.5),
+  0 2px 2px -2px rgba(0,0,0,0.05),
+  0 1px 4px 0 rgba(0,0,0,0.05);
+  position: relative;
+  cursor: zoom-in;
+}
+
+.game-discover-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.games-index-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

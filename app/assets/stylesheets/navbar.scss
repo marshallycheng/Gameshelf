@@ -31,6 +31,7 @@ $activecolor: #656565;
   line-height: 43px;
   display: block;
   text-decoration: none;
+  overflow: hidden;
 }
 
 .logout-button {
@@ -104,4 +105,11 @@ $activecolor: #656565;
 
 .search-focus {
   border: 4px solid $searchborder;
+}
+
+.profile-icon {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  top: 5px;
 }
