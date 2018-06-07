@@ -10,19 +10,22 @@ class GameIndex extends React.Component {
     };
   }
 
-  componentWillReceiveProps() {
+  componentDidMount() {
+
     this.props.fetchGames();
+
   }
 
   render(){
     const allTheGames = this.props.games.map(game => {
       return <GameIndexItem key={game.id} game={game} />;
     });
-
     return (
       <div>
         <NavBarContainer />
-        {allTheGames}
+        <ul className="game-list">
+          {allTheGames}
+        </ul>
       </div>
     );
   }

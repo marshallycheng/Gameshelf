@@ -2,6 +2,7 @@ $textcolor: #b5b5b5;
 $searchcolor: #efefef;
 $ashgrey: #888888;
 $searchborder: #8ebffd;
+$activecolor: #656565;
 
 .nav-bar {
   background: $white;
@@ -12,6 +13,7 @@ $searchborder: #8ebffd;
   height: 64px;
   padding: 4px 0px;
   box-sizing: border-box;
+  border-bottom: 1px solid $searchcolor;
 }
 
 .nav-bar div, .link {
@@ -52,10 +54,16 @@ $searchborder: #8ebffd;
   align-items: center;
   justify-content: left;
   cursor: default;
-  width: 1200px;
+  width: 1400px;
   height: 40px;
   background: $searchcolor;
   border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.active {
+  color: $activecolor;
+  font-weight: 500;
 }
 
 #search-placeholder input {
