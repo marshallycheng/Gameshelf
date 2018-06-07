@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+import { fetchGames, fetchGame } from './actions/game_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -18,8 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-
+  //TESTS
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.fetchGames = fetchGames;
+  window.fetchGame = fetchGame;
+
+
   ReactDOM.render(<Root store={store}/>, root);
 });
