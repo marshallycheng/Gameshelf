@@ -189,7 +189,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   margin-bottom: 18px; }
 
 .review-form {
-  height: 200px;
+  height: 280px;
   box-sizing: border-box;
   border: 1px solid black; }
 
@@ -200,13 +200,13 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   box-sizing: border-box; }
 
 .game-stats {
-  height: 180px;
+  height: 100px;
   box-sizing: border-box;
   display: flex;
   flex-direction: row; }
 
 .game-stats-left, .game-stats-right {
-  height: 180px;
+  height: 100px;
   width: 50%;
   display: flex;
   flex-flow: row wrap; }

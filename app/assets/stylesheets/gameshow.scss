@@ -55,7 +55,7 @@ $firebrick: #bb051e;
 .review-form {
   // width: 601px;
   // margin-left: 10px;
-  height: 200px;
+  height: 280px;
   box-sizing: border-box;
   border: 1px solid black;
 }
@@ -69,7 +69,7 @@ $firebrick: #bb051e;
 }
 
 .game-stats {
-  height: 180px;
+  height: 100px;
   box-sizing: border-box;
   // border: 1px solid black;
   display: flex;
@@ -78,7 +78,7 @@ $firebrick: #bb051e;
 
 .game-stats-left, .game-stats-right {
   // border: 1px solid red;
-  height: 180px;
+  height: 100px;
   width: 50%;
   display: flex;
   flex-flow: row wrap;
