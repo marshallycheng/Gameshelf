@@ -42,6 +42,8 @@ $activecolor: #656565;
 #kappa-main {
   height: 36px;
   width: auto;
+  margin-left: 20px;
+  margin-right: 10px;
 }
 
 
@@ -55,11 +57,13 @@ $activecolor: #656565;
   align-items: center;
   justify-content: left;
   cursor: default;
-  width: 1400px;
+  width: 1300px;
   height: 40px;
   background: $searchcolor;
   border-radius: 4px;
   box-sizing: border-box;
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
 .active {

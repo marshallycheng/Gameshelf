@@ -48,7 +48,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 #kappa-main {
   height: 36px;
-  width: auto; }
+  width: auto;
+  margin-left: 20px;
+  margin-right: 10px; }
 
 #search-logo {
   position: relative;
@@ -59,11 +61,13 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   align-items: center;
   justify-content: left;
   cursor: default;
-  width: 1400px;
+  width: 1300px;
   height: 40px;
   background: #efefef;
   border-radius: 4px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin-left: 10px;
+  margin-right: 20px; }
 
 .active {
   color: #656565;
@@ -148,11 +152,8 @@ body {
   display: flex;
   flex-direction: column; }
 
-.login-form-container {
-  font-size: 28px;
-  color: #555555;
-  font-weight: bold;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.imgur.com/qyFRZoK.jpg");
+.session-background {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images3.alphacoders.com/716/716166.jpg");
   background-size: cover;
   background-repeat: repeat-x;
   animation: animate-background linear 16s infinite alternate;
@@ -161,6 +162,11 @@ body {
   overflow: hidden;
   height: 100vh;
   transition: 4s; }
+
+.login-form-container {
+  font-size: 28px;
+  color: #555555;
+  font-weight: bold; }
 
 @keyframes animate-background {
   from {
@@ -180,7 +186,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 0.80; }
+  opacity: 0.85; }
 
 .login-form-box h3 {
   color: #cccccc;
@@ -221,7 +227,8 @@ body {
   margin-top: 10px; }
 
 ::placeholder {
-  color: #b5b5b5; }
+  color: #b5b5b5;
+  font-weight: 500; }
 
 .session-button {
   background-color: #6441a5;
