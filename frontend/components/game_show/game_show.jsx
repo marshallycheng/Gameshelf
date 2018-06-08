@@ -14,6 +14,16 @@ class GameShow extends React.Component {
 
   render(){
     const { game } = this.props;
+    let genres;
+    if (game) {
+      if (game.genres) {
+        genres = game.genres.map(genre => {
+          return <span className="genre-tag" key={genre}>{genre}</span>;
+        });
+      }
+    } else {
+      genres = [];
+    }
 
     if (!game) {
       return 'loading';
@@ -49,7 +59,7 @@ class GameShow extends React.Component {
                       <span className="game-release-date-label">
                         Released on:
                       </span>
-                      Jan 26, 1995
+                      {game.release_date}
                     </span>
                   </div>
                   <div className="game-stats-right">
@@ -57,13 +67,13 @@ class GameShow extends React.Component {
                       <span className="game-genres-label">
                         Genres:
                       </span>
-                      Action
+                      {genres}
                     </span>
                     <span className="game-rating">
                       <span className="game-rating-label">
                         Rating:
                       </span>
-                      T
+                      {game.rating}
                     </span>
                   </div>
 

@@ -243,3 +243,17 @@ $firebrick: #bb051e;
 .game-genres, .game-rating {
   color: $darkgrey;
 }
+
+.genre-tag {
+  color: $white;
+  background: $twitchpurple;
+  width: auto;
+  padding: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.genre-tag:not(:last-of-type) {
+  margin-right: 5px;
+}

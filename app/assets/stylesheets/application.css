@@ -344,6 +344,18 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .game-genres, .game-rating {
   color: #555555; }
 
+.genre-tag {
+  color: white;
+  background: #6441a5;
+  width: auto;
+  padding: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer; }
+
+.genre-tag:not(:last-of-type) {
+  margin-right: 5px; }
+
 html {
   height: 100vh;
   width: 100vw; }
