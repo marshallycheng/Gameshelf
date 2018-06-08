@@ -177,7 +177,7 @@ GAME_IMAGES = [
   "https://static-cdn.jtvnw.net/ttv-boxart/Paladins-285x380.jpg"
 ]
 GAME_DESCRIPTIONS = [
-  "Description. In a time of global crisis, an international task force of heroes banded together to restore peace to a war-torn world: OVERWATCH. It ended the crisis and helped to maintain peace in the decades that followed, inspiring an era of exploration, innovation, and discovery.",
+  "One day, 98% of Earth's human population suddenly disappeared, and the remaining humans found the skies covered in dense clouds, creating chaotic storms that dropped husks, humanoid zombie-like creatures, that attacked the living. The survivors found ways to construct 'storm shields', a field that cleared the storm clouds from immediately overhead and reduced the attacks from husks, and used these to set up survivor bases across the globe.",
   "League of Legends is a fast-paced, competitive online game that blends the speed and intensity of an RTS with RPG elements. Two teams of powerful champions, each with a unique design and playstyle, battle head-to-head across multiple battlefields and game modes.",
   "PlayerUnknown's Battlegrounds (PUBG) is an online multiplayer battle royale game developed and published by PUBG Corporation, a subsidiary of publisher Bluehole. ... The available safe area of the game's map decreases in size over time, directing surviving players into tighter areas to force encounters.",
   "Hearthstone. Hearthstone, originally Hearthstone: Heroes of Warcraft, is a free-to-play online collectible card video game developed and published by Blizzard Entertainment.",

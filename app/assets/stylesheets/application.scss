@@ -13,9 +13,17 @@ $orange: #e3780c;
 @import 'reset.scss';
 @import 'navbar.scss';
 @import 'discover.scss';
+@import 'gameshow.scss';
 
-body {
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body, #root {
   font-family: $roboto;
+  height: 100%;
+  width: 100%;
 }
 
 

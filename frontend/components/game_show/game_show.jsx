@@ -1,4 +1,5 @@
 import React from 'react';
+import { homeIcon } from '../logo';
 import NavBarContainer from '../nav/nav_bar_container';
 
 class GameShow extends React.Component {
@@ -18,12 +19,25 @@ class GameShow extends React.Component {
     } else {
     return (
       <div className="game-show-page">
-        <NavBarContainer />
         <div className="game-show-content">
+          <div class="home-button">
+            {homeIcon} Home
+          </div>
           <div className="game-show-container">
-            {game.title}
-            <img className="game-show-image" src={`${game.image_url}`}/>
-            {game.description}
+            <div className="container-links">
+            </div>
+            <div className="container-content">
+              <span className="game-show-title">
+                {game.title}
+              </span>
+              <img className="game-show-image" src={`${game.image_url}`}/>
+              <div className="review-form">
+                Review Form
+              </div>
+              <div className="game-show-description">
+                {game.description}
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -28,3 +28,9 @@ export const searchIcon = <svg className="_rw _5l _rx _27" height="22" width="22
 </svg>;
 
 export const profileIcon = <img className="profile-icon" src='https://s.pinimg.com/images/user/default_75.png' />;
+
+export const homeIcon = <svg className="home-icon" fill="#555555" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img">
+  <title></title>
+  <path d="M17.28,24.00 C16.71,24.00 16.14,23.78 15.70,23.34 L4.50,12.00 L15.70,0.66 C16.57,-0.22 17.98,-0.22 18.85,0.66 C19.72,1.54 19.72,2.96 18.85,3.84 L10.79,12.00 L18.85,20.16 C19.72,21.04 19.72,22.46 18.85,23.34 C18.41,23.78 17.85,24.00 17.28,24.00">
+  </path>
+</svg>;
