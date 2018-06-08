@@ -141,6 +141,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   justify-content: center; }
 
 .games-index-content {
+  background: white;
   display: flex;
   flex-direction: row;
   justify-content: center; }
@@ -161,8 +162,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   flex-flow: row wrap;
   align-content: flex-start;
   justify-content: center;
-  width: 1300px;
+  width: 1000px;
   background: white;
+  justify: center;
   border-radius: 10px; }
 
 .game-show-image {
@@ -172,21 +174,53 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 .game-show-description {
   margin-top: 16px;
-  font-size: 18px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 400;
   color: #555555; }
 
 .game-show-title {
   width: 100%;
   color: #555555;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 500;
   cursor: pointer;
-  height: 30px; }
+  height: 30px;
+  margin-bottom: 18px; }
 
 .review-form {
-  width: 801px;
+  height: 200px;
+  box-sizing: border-box;
+  border: 1px solid black; }
+
+.game-details {
+  width: 601px;
   margin-left: 10px;
-  height: 380px; }
+  height: 380px;
+  box-sizing: border-box; }
+
+.game-stats {
+  height: 180px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row; }
+
+.game-stats-left, .game-stats-right {
+  height: 180px;
+  width: 50%;
+  display: flex;
+  flex-flow: row wrap; }
+
+.game-score, .game-release-date,
+.game-genres, .game-rating {
+  height: 50%;
+  width: 100%; }
+
+.game-release-date-label, .game-genres-label,
+.game-rating-label {
+  color: #555555;
+  font-weight: bold;
+  margin-right: 5px; }
 
 .game-show-image {
   border-radius: 8px; }
@@ -195,12 +229,11 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   display: inline-block; }
 
 .game-show-image, .game-show-description,
-.game-show-title, .review-form {
-  border: 2px solid black;
+.game-show-title, .review-form, .game-reviews,
+.reviews-header, .reviews-list {
   box-sizing: border-box; }
 
 .container-content, .container-links {
-  border: 2px solid red;
   width: 1100px;
   box-sizing: border-box; }
 
@@ -211,8 +244,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 .container-links {
   box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
   height: 75px;
-  padding: 16px 24px; }
+  padding: 16px 0px; }
 
 .home-icon {
   align-self: flex-start;
@@ -224,21 +259,90 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .home-button {
   display: flex;
   box-sizing: border-box;
-  width: 96px;
+  width: 88px;
   height: 44px;
   padding: 4px;
   overflow: hidden;
   color: #555555;
   font-weight: 600;
-  position: relative;
+  position: absolute;
+  top: 25px;
+  left: 25px;
   margin-right: 50px;
   align-items: center;
-  justify-content: space-around; }
+  justify-content: space-around;
+  text-decoration: none; }
+
+.game-reviews {
+  width: 1100px;
+  box-sizing: border-box; }
+
+.review-header {
+  height: 80px;
+  line-height: 80px;
+  font-size: 21px;
+  font-weight: 500;
+  color: #555555;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef; }
 
 .home-button:hover {
   background: #d8d8d8;
   border-radius: 20px;
   cursor: pointer; }
+
+.game-reviews, .container-content,
+.container-links, .game-show-title,
+.game-show-description, .review-header,
+.reviews-list {
+  width: 900px; }
+
+.send-button, .favorite-button {
+  box-sizing: border-box;
+  padding: 8px;
+  height: 43px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer; }
+
+.send-button {
+  background: #efefef;
+  color: #555555;
+  width: 86px;
+  font-weight: 700;
+  text-align: center; }
+
+.favorite-button {
+  background: #6441a5;
+  margin-left: 15px;
+  color: white;
+  width: 100px; }
+
+.send-icon {
+  position: relative;
+  top: 2px;
+  margin-right: 2px; }
+
+.favorite-icon {
+  height: 18px;
+  width: 18px;
+  position: relative;
+  top: 3px; }
+
+.full-star, .half-star, .empty-star {
+  height: 18px;
+  width: 18px;
+  position: relative;
+  top: 3px;
+  margin-right: 1px; }
+
+.game-score svg:last-of-type {
+  margin-right: 5px; }
+
+.game-score, .game-release-date,
+.game-genres, .game-rating {
+  color: #555555; }
 
 html {
   height: 100vh;

@@ -8,7 +8,9 @@ $darkgrey: rgb(85, 85, 85);
 $roboto: 'Roboto', sans-serif;
 $inputcolor: rgb(181, 181, 181);
 $twitchpurple: #6441a5;
+$gainsboro: #d8d8d8;
 $orange: #e3780c;
+$dimgrey: #555555;
 
 @import 'reset.scss';
 @import 'navbar.scss';
@@ -49,11 +51,11 @@ body, #root {
   height: 100vh;
   transition: 4s;
 }
+
 .login-form-container {
   font-size: 28px;
   color: $darkgrey;
   font-weight: bold;
-
 }
 
 @keyframes animate-background {

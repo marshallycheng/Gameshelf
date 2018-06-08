@@ -1,5 +1,5 @@
 .game-list{
-  // background: $antiquewhite;
+  // background: $white;
   margin-top: 12px;
   width: 100%;
   list-style: none;
@@ -24,7 +24,6 @@
   // background: $searchcolor;
   // border-radius: 8px;
   // padding: 8px;
-
 }
 
 .game-cover-art:hover {
@@ -44,6 +43,7 @@
 }
 
 .games-index-content {
+  background: $white;
   display: flex;
   flex-direction: row;
   justify-content: center;
