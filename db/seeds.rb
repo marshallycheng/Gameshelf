@@ -1,4 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
+require 'byebug'
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -602,20 +603,27 @@ USERNAME_SECOND_HALF = [
 end
 
 REVIEW_BODY = {
-  5 => "#{game} broke a lot of records in the history of gaming. By that, I mean it is most likely impossible to find one thing wrong with this game. It's like the King of Gaming took the best classic game ever and modernize it to make it look like this game over here. This is why #{game} will forever remain in my heart no matter where it all goes. I'm telling you this, this game has everything... yes, every... single... thing. This is the lost child of gaming and the true successor. Just go buy this game, it wants your money so bad, it wants you to play it so bad, it wants to be your local friend literally bad. I'll be waiting until you get this game." ,
+  5 => "%{game} broke a lot of records in the history of gaming. By that, I mean it is most likely impossible to find one thing wrong with this game. It's like the King of Gaming took the best classic game ever and modernize it to make it look like this game over here. This is why %{game} will forever remain in my heart no matter where it all goes. I'm telling you this, this game has everything... yes, every... single... thing. This is the lost child of gaming and the true successor. Just go buy this game, it wants your money so bad, it wants you to play it so bad, it wants to be your local friend literally bad. I'll be waiting until you get this game." ,
   4 => "Fun, beautiful, and has plenty of new gimmicks. The game is aimed at younger players as most adults with gaming experience will beat the main story without dying more than a handful of times. The first half of the game is that painstakingly easy. The second half adds some challenge though. Not for me though, I am very very very GOOD at games. Don't expect to find any sort of spectacular story here. Conclusion: Good, charming game, but a little overrated.",
-  3 => "Completely and disappointingly underwhelming. I sat down this morning for some good old-fashioned #{game} and by the middle of the afternoon it was over with the credits rolling. What started off as a fresh and new adventure turned very quickly into an unwelcome slog through more and more eye searingly bright graphics that had more frustrating moments than fun. The movement felt clunky and unresponsive, the button combos for doing some of the more advanced movement was the opposite of enjoyable, and when there were ice physics... just no... stop. ",
-  2 => "The characters/enemies are boring/repetitive, they don't really make sense in the context of the #{game} Universe or the game on a grand scale. I never cared about any of the 'story' arcs of the various charcters and the game overall didn't keep my interest because everything was the same - get strong and beat a boss you don't care about. This game feels like a bunch of little games jammed into one, with highly inconsistent and unsatisfying puzzles.",
-  1 => "Gosh this game is so bad. #{game} or whatever you call it has no good decisions or anything. I'm 12 and I have a lot of ideas for how they could make #{game} better. The people who made this game are so silly, why didn't they just make the game better? If this game was better I would've liked it more. If I made #{game}, making the game more fun would be my first job. I am so sad because of this game not being good.",
-  0 => "#{game} was by far the worst game I have ever played, the game was a huge disappointment and did not live up to the hype at all. The game tries to innovate but ends up being a lackluster experience, why can't you punch and kick like you can in Knack 2? Should have followed in Knack's footsteps. Why couldn't there be a first-person shooter mode where you could become Knack and punch and kick like Knack can? That would've made for a good game. Knack 2 is the greatest game of all time and this game should be ashamed that it's not more like Knack 2.",
+  3 => "Completely and disappointingly underwhelming. I sat down this morning for some good old-fashioned %{game} and by the middle of the afternoon it was over with the credits rolling. What started off as a fresh and new adventure turned very quickly into an unwelcome slog through more and more eye searingly bright graphics that had more frustrating moments than fun. The movement felt clunky and unresponsive, the button combos for doing some of the more advanced movement was the opposite of enjoyable, and when there were ice physics... just no... stop. ",
+  2 => "The characters/enemies are boring/repetitive, they don't really make sense in the context of the %{game} Universe or the game on a grand scale. I never cared about any of the 'story' arcs of the various charcters and the game overall didn't keep my interest because everything was the same - get strong and beat a boss you don't care about. This game feels like a bunch of little games jammed into one, with highly inconsistent and unsatisfying puzzles.",
+  1 => "Gosh this game is so bad. %{game} or whatever you call it has no good decisions or anything. I'm 12 and I have a lot of ideas for how they could make %{game} better. The people who made this game are so silly, why didn't they just make the game better? If this game was better I would've liked it more. If I made %{game}, making the game more fun would be my first job. I am so sad because of this game not being good.",
+  0 => "%{game} was by far the worst game I have ever played, the game was a huge disappointment and did not live up to the hype at all. The game tries to innovate but ends up being a lackluster experience, why can't you punch and kick like you can in Knack 2? Should have followed in Knack's footsteps. Why couldn't there be a first-person shooter mode where you could become Knack and punch and kick like Knack can? That would've made for a good game. Knack 2 is the greatest game of all time and this game should be ashamed that it's not more like Knack 2.",
 }
 
 Game.all.each do |game|
   3.times do
     rating = rand(0..5)
     body = REVIEW_BODY[rating]
-    num = rand(0...200)
-    user_id = User.all[num].id
-    Review.create({user_id: user_id, game_id: game.id, body: body, rating: rating})
+    user_id = User.all.sample.id
+    Review.create({
+      user_id: user_id,
+      game_id: game.id,
+      rating: rating,
+      body: (body % {
+        game: game.title
+        }
+      )
+    })
   end
 end
