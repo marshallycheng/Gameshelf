@@ -1,5 +1,5 @@
 export const selectGameReviews = (state, game) => {
-  return game ? game.review_ids.map(id => state.entities.reviews[id]) : [];
+  return (game && game.review_ids) ? game.review_ids.map(id => state.entities.reviews[id]) : [];
 };
 
 export const selectReviewer = (state, review) => {

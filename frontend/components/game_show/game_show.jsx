@@ -3,6 +3,7 @@ import { sendIcon, homeIcon, favoriteIcon, fullStar, halfStar, emptyStar } from 
 import { Link } from 'react-router-dom';
 import NavBarContainer from '../nav/nav_bar_container';
 import GameReviewsContainer from './game_reviews/game_reviews_container';
+import CreateReviewContainer from './game_reviews/create_review_form_container';
 
 class GameShow extends React.Component {
   constructor(props){
@@ -80,9 +81,7 @@ class GameShow extends React.Component {
 
 
                 </div>
-                <div className="review-form">
-                  Review form
-                </div>
+                <CreateReviewContainer />
               </div>
               <div className="game-show-description">
                 {game.description}

@@ -1,23 +1,39 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { login, clearErrors } from '../../actions/review_actions';
+import { editReview, clearErrors } from '../../../actions/review_actions';
 import GameReviewForm from './game_review_form';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = (state, ownProps) => {
+  const review = { title: ownProps.review.title, rating: ownProps.review.rating, body: ownProps.review.body };
+
   return {
-    errors: errors.session,
-    submitButton: 'Log in',
-    navText: 'Sign Up'
+    errors: state.errors.review,
+    submitButton: 'Edit Review',
+    review
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    processForm: (user) => dispatch(login(user)),
-    login: (user) => dispatch(login(user)),
+    processForm: (review) => dispatch(editReview(review)),
     clearErrors: () => dispatch(clearErrors())
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+class EditReviewForm extends React.Component {
+  render() {
+    const { processForm, submitButton, clearErrors, errors, review} = this.props;
+    return (
+      <GameReviewForm
+        processForm={processForm}
+        submitButton={submitButton}
+        clearErrors={clearErrors}
+        errors={errors}
+        review={review}
+      />
+  );
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditReviewForm);
