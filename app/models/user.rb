@@ -5,6 +5,8 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, length: {maximum: 16}
   validates :password, length: { minimum: 6}, allow_nil: true
 
+  has_many :reviews
+
   before_validation :ensure_session_token
 
   def self.find_by_credentials(username, password)

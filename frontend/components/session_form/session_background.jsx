@@ -9,10 +9,10 @@ class SessionBackground extends React.Component {
     super(props);
 
     this.bgImageArray = [
-      "https://images3.alphacoders.com/716/716166.jpg",
+      "https://i.imgur.com/ZBlD0d2.jpg",
       "https://i.imgur.com/qyFRZoK.jpg",
-      "https://images6.alphacoders.com/716/716167.jpg",
-      "http://www.seekwallpaper.com/seekpics/big/279/2794220_breath-of-the-wild-wallpaper-4k.jpg"
+      "https://i.imgur.com/er56xcK.jpg",
+      "https://i.imgur.com/bG0SSdk.jpg"
     ];
     this.base = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/full-";
     this.secs = 5;
