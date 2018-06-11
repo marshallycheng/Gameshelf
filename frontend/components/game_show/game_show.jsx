@@ -2,6 +2,7 @@ import React from 'react';
 import { sendIcon, homeIcon, favoriteIcon, fullStar, halfStar, emptyStar } from '../logo';
 import { Link } from 'react-router-dom';
 import NavBarContainer from '../nav/nav_bar_container';
+import GameReviewsContainer from './game_reviews/game_reviews_container';
 
 class GameShow extends React.Component {
   constructor(props){
@@ -91,10 +92,8 @@ class GameShow extends React.Component {
               <div className="review-header">
                 Reviews
               </div>
-              <div className="reviews-list">
-                reviews list
-                reviews list
-                reviews list
+              <div className="reviews-list-container">
+                <GameReviewsContainer gameId={game.id}/>
               </div>
             </div>
           </div>

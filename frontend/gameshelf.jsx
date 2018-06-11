@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { fetchGames, fetchGame } from './actions/game_actions';
+import { fetchGames, fetchGame, receiveGame } from './actions/game_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.fetchGames = fetchGames;
+  window.receiveGame = receiveGame;
   window.fetchGame = fetchGame;
 
 

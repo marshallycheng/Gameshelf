@@ -9,10 +9,12 @@ const receiveGames = (games) => {
     games
   };
 };
-const receiveGame = (game) => {
+export const receiveGame = (data) => {
   return {
     type: RECEIVE_GAME,
-    game
+    game: data.game,
+    reviews: data.reviews,
+    users: data.users
   };
 };
 
