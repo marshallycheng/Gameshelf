@@ -6,7 +6,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def show
-
+    @review = Review.find(params[:id])
   end
 
   def edit
@@ -27,7 +27,7 @@ class Api::ReviewsController < ApplicationController
 
     if @review.save
       render :show
-      # render index?. review partial to return new review instead. append
+      # state will merge, only update new
     else
       render json: @review.errors.full_messages, status: 422
     end
@@ -38,7 +38,6 @@ class Api::ReviewsController < ApplicationController
     @review.destroy
 
     render :show
-    # anything else? consult pokemon controller
   end
 
   private
