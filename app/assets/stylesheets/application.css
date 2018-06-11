@@ -148,14 +148,14 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 .content, .game-show-page, .game-show-content {
   background: #efefef;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw; }
 
 .game-show-content {
   display: flex;
   justify-content: center;
   align-content: center;
-  padding-top: 35px; }
+  padding: 35px 0px; }
 
 .game-show-container {
   display: flex;
@@ -356,13 +356,88 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .genre-tag:not(:last-of-type) {
   margin-right: 5px; }
 
+.review-form-rating span {
+  display: block;
+  height: 20px;
+  width: 20px; }
+
+.review-form-rating {
+  height: 100px;
+  width: 100px; }
+
+.game-reviews-list {
+  list-style: none; }
+
+.review-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0px; }
+
+.review-info-left {
+  display: flex;
+  flex-direction: row;
+  color: #888888;
+  font-size: 16px; }
+
+.review-info-username {
+  padding-right: 5px;
+  font-size: 16px;
+  color: #555555;
+  font-weight: bold; }
+
+.review-info-date {
+  color: #555555;
+  font-weight: bold; }
+
+.review-info-rating {
+  padding-left: 5px; }
+
+.review-content {
+  color: #555555;
+  line-height: 1.5; }
+
+.game-reviews {
+  padding-bottom: 18px; }
+
+.review-edit-button, .review-delete-button {
+  box-sizing: border-box;
+  padding: 5px;
+  height: 20px;
+  border: none;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 6px; }
+
+.review-edit-button {
+  background: #efefef;
+  color: #555555;
+  width: 40px;
+  font-weight: 700;
+  display: inline-flex; }
+
+.review-edit-button:hover {
+  background: #d8d8d8; }
+
+.review-delete-button:hover {
+  background: #7d5bbe; }
+
+.review-delete-button {
+  background: #6441a5;
+  margin-left: 5px;
+  color: white;
+  width: 50px; }
+
+.review-buttons {
+  margin-left: 20px; }
+
 html {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw; }
 
 body, #root {
   font-family: "Roboto", sans-serif;
-  height: 100%;
+  min-height: 100%;
   width: 100%; }
 
 .login-form-container {

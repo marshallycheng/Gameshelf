@@ -5,7 +5,7 @@ import { createReview, clearErrors } from '../../../actions/review_actions';
 import GameReviewForm from './game_review_form';
 
 const mapStateToProps = (state, ownProps) => {
-  const review = { title: '', rating: '', body: ''};
+  const review = { rating: 0, body: '', game_id: ownProps.game.id};
   return {
     errors: state.errors.review,
     submitButton: 'Submit Review',

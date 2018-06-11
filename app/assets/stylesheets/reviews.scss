@@ -1,0 +1,101 @@
+// $textcolor: #9d9d9d;
+$hoverpurple: #7d5bbe;
+
+.review-form-rating span {
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+
+.star {
+  // background: green;
+}
+
+.star-checked {
+  // background: red;
+}
+.review-form-rating {
+  height: 100px;
+  width: 100px;
+}
+
+.game-reviews-list {
+  list-style: none;
+}
+
+.game-review-item {
+  // border: 1px solid black;
+}
+
+.review-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0px;
+}
+
+.review-info-left {
+  display: flex;
+  flex-direction: row;
+  color: $ashgrey;
+  font-size: 16px;
+}
+
+.review-info-username {
+  padding-right: 5px;
+  font-size: 16px;
+  color: $dimgrey;
+  font-weight: bold;
+}
+.review-info-date {
+  color: $dimgrey;
+  font-weight: bold;
+}
+.review-info-rating {
+  padding-left: 5px;
+}
+
+.review-content {
+  color: $dimgrey;
+  line-height: 1.5;
+}
+
+.game-reviews {
+  padding-bottom: 18px;
+}
+
+.review-edit-button, .review-delete-button {
+  box-sizing: border-box;
+  padding: 5px;
+  height: 20px;
+  border: none;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 6px;
+}
+
+.review-edit-button {
+  background: $searchcolor;
+  color: $dimgrey;
+  width: 40px;
+  font-weight: 700;
+  display: inline-flex;
+}
+
+.review-edit-button:hover {
+  background: $gainsboro;
+}
+
+.review-delete-button:hover {
+  background: $hoverpurple;
+}
+.review-delete-button {
+  background: $twitchpurple;
+  margin-left: 5px;
+  color: $white;
+  width: 50px;
+}
+
+.review-buttons {
+  margin-left: 20px;
+}

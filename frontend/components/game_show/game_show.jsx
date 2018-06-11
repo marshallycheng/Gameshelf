@@ -81,7 +81,7 @@ class GameShow extends React.Component {
 
 
                 </div>
-                <CreateReviewContainer />
+                <CreateReviewContainer game={game}/>
               </div>
               <div className="game-show-description">
                 {game.description}

@@ -3,7 +3,7 @@ $firebrick: #bb051e;
 
 .content, .game-show-page, .game-show-content {
   background: $searchcolor;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 }
 
@@ -11,7 +11,7 @@ $firebrick: #bb051e;
   display: flex;
   justify-content: center;
   align-content: center;
-  padding-top: 35px;
+  padding: 35px 0px;
 }
 
 
@@ -23,7 +23,6 @@ $firebrick: #bb051e;
   width: 1000px;
   background: $white;
   justify: center;
-
   border-radius: 10px;
 }
 

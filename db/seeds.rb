@@ -588,7 +588,7 @@ USERNAME_SECOND_HALF = [
   "Bear",
   "Crow",
   "Bison",
-  "Buffao",
+  "Buffalo",
   "Condor",
   "Eagle",
   "Canadian",
