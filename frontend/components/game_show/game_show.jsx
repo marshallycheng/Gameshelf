@@ -25,12 +25,7 @@ class GameShow extends React.Component {
     this.props.reviews.forEach(review => {
       totalRating += review.rating;
     });
-    console.log(this.props.reviews);
     const averageRating = (totalRating / this.props.reviews.length);
-    console.log(totalRating);
-    console.log(this.props.reviews.length);
-    console.log(averageRating);
-    console.log(Math.round(averageRating * 100) / 100);
     return Math.round(averageRating * 100) / 100;
   }
 

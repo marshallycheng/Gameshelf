@@ -8,8 +8,6 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_CURRENT_USER:
       return merge({}, state, { [action.currentUser.id]: action.currentUser});
     case RECEIVE_GAME:
-      console.log(action.users);
-      console.log('hello');
       return merge({}, state, action.users);
     default:
       return state;
