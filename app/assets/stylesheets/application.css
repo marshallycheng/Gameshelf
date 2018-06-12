@@ -156,7 +156,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 35px 0px; }
+  padding: 35px 0px 200px 0px; }
 
 .game-show-container {
   display: flex;
@@ -382,17 +382,33 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   float: right; }
 
 /***** CSS Magic to Highlight Stars on Hover *****/
-.review-form-rating > input:checked ~ label,
-.review-form-rating:not(:checked) > label:hover,
-.review-form-rating:not(:checked) > label:hover ~ label {
-  color: #6441a5; }
+.container-content .game-details {
+  /* hover previous stars in list */ }
+  .container-content .game-details .review-form-rating > label.checked,
+  .container-content .game-details .review-form-rating:not(:checked) > label:hover,
+  .container-content .game-details .review-form-rating:not(:checked) > label.checked ~ label,
+  .container-content .game-details .review-form-rating:not(:checked) > label:hover ~ label {
+    color: #6441a5; }
+  .container-content .game-details .review-form-rating > label.checked + label:hover,
+  .container-content .game-details .review-form-rating > label.checked ~ label:hover,
+  .container-content .game-details .review-form-rating > label:hover ~ label.checked ~ label,
+  .container-content .game-details .review-form-rating > label:hover ~ label.checked,
+  .container-content .game-details .review-form-rating > label.checked ~ label:hover ~ label {
+    color: #7d5bbe; }
 
-/* hover previous stars in list */
-.review-form-rating > input:checked + label:hover,
-.review-form-rating > input:checked ~ label:hover,
-.review-form-rating > label:hover ~ input:checked ~ label,
-.review-form-rating > input:checked ~ label:hover ~ label {
-  color: #7d5bbe; }
+.game-review-item {
+  /* hover previous stars in list */ }
+  .game-review-item .review-form-rating > label.checked,
+  .game-review-item .review-form-rating:not(:checked) > label:hover,
+  .game-review-item .review-form-rating:not(:checked) > label.checked ~ label,
+  .game-review-item .review-form-rating:not(:checked) > label:hover ~ label {
+    color: #6441a5; }
+  .game-review-item .review-form-rating > label.checked + label:hover,
+  .game-review-item .review-form-rating > label.checked ~ label:hover,
+  .game-review-item .review-form-rating > label:hover ~ label.checked ~ label,
+  .game-review-item .review-form-rating > label:hover ~ label.checked,
+  .game-review-item .review-form-rating > label.checked ~ label:hover ~ label {
+    color: #7d5bbe; }
 
 .review-form-rating span {
   display: block;
@@ -506,6 +522,20 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   margin-left: 3px;
   position: relative;
   bottom: 3px; }
+
+.game-score {
+  display: flex;
+  flex-direction: row; }
+
+.game-score-number {
+  position: relative;
+  color: #555555;
+  margin-left: 5px; }
+
+.review-form-container h3 {
+  font-weight: bold;
+  color: #555555;
+  font-size: 22px; }
 
 html {
   min-height: 100vh;

@@ -13,10 +13,45 @@ class GameShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchGame(this.props.gameId);
+    window.scrollTo(0,0);
   }
 
   updateReviews() {
     this.setState();
+  }
+
+  calculateAverageRating() {
+    let totalRating = 0;
+    this.props.reviews.forEach(review => {
+      totalRating += review.rating;
+    });
+    console.log(this.props.reviews);
+    const averageRating = (totalRating / this.props.reviews.length);
+    console.log(totalRating);
+    console.log(this.props.reviews.length);
+    console.log(averageRating);
+    console.log(Math.round(averageRating * 100) / 100);
+    return Math.round(averageRating * 100) / 100;
+  }
+
+  calculateAverageStars(){
+    const numStars = this.calculateAverageRating();
+    const numArray = [1,2,3,4,5];
+    let partialStar = false;
+    const stars = <ul className="review-stars-list">
+
+      {numArray.map((num) => {
+        if (num <= numStars) {
+          return <li>{fullStar}</li>;
+        } else if (numStars >= 3.25 && !partialStar) {
+          partialStar = true;
+          return <li>{halfStar}</li>;
+        } else {
+          return <li>{emptyStar}</li>;
+        }
+      })}
+    </ul>;
+    return stars;
   }
 
   render(){
@@ -56,12 +91,10 @@ class GameShow extends React.Component {
                 <div className="game-stats">
                   <div className="game-stats-left">
                     <span className="game-score">
-                      {fullStar}
-                      {fullStar}
-                      {fullStar}
-                      {halfStar}
-                      {emptyStar}
-                      3.5
+                      {this.calculateAverageStars()}
+                      <div className="game-score-number">
+                        {this.calculateAverageRating()}
+                      </div>
                     </span>
                     <span className="game-release-date">
                       <span className="game-release-date-label">

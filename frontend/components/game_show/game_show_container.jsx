@@ -6,9 +6,9 @@ import { fetchGame } from '../../actions/game_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const gameId = ownProps.match.params.gameId;
-
   return {
-    reviews: state.entities.reviews,
+    // should try to clean this up later. need to fix games reducer to append review_id
+    reviews: Object.values(state.entities.reviews).filter((review) => (review.game_id === parseInt(gameId))),
     game: state.entities.games[gameId],
     gameId
   };

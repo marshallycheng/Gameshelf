@@ -22,16 +22,31 @@
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 // Credit to James Barnett for this star rating logic
+.container-content .game-details {
+  .review-form-rating > label.checked, /* show gold star when clicked */
+  .review-form-rating:not(:checked) > label:hover, /* hover current star */
+  .review-form-rating:not(:checked) > label.checked ~ label,
+  .review-form-rating:not(:checked) > label:hover ~ label { color: $twitchpurple;  } /* hover previous stars in list */
 
-.review-form-rating > input:checked ~ label, /* show gold star when clicked */
-.review-form-rating:not(:checked) > label:hover, /* hover current star */
-.review-form-rating:not(:checked) > label:hover ~ label { color: $twitchpurple;  } /* hover previous stars in list */
+  .review-form-rating > label.checked + label:hover, /* hover current star when changing rating */
+  .review-form-rating > label.checked ~ label:hover,
+  .review-form-rating > label:hover ~ label.checked ~ label, /* lighten current selection */
+  .review-form-rating > label:hover ~ label.checked, /* lighten current selection */
+  .review-form-rating > label.checked ~ label:hover ~ label { color: $hoverpurple;  }
+}
 
-.review-form-rating > input:checked + label:hover, /* hover current star when changing rating */
-.review-form-rating > input:checked ~ label:hover,
-.review-form-rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.review-form-rating > input:checked ~ label:hover ~ label { color: $hoverpurple;  }
+.game-review-item  {
+  .review-form-rating > label.checked, /* show gold star when clicked */
+  .review-form-rating:not(:checked) > label:hover, /* hover current star */
+  .review-form-rating:not(:checked) > label.checked ~ label,
+  .review-form-rating:not(:checked) > label:hover ~ label { color: $twitchpurple;  } /* hover previous stars in list */
 
+  .review-form-rating > label.checked + label:hover, /* hover current star when changing rating */
+  .review-form-rating > label.checked ~ label:hover,
+  .review-form-rating > label:hover ~ label.checked ~ label, /* lighten current selection */
+  .review-form-rating > label:hover ~ label.checked, /* lighten current selection */
+  .review-form-rating > label.checked ~ label:hover ~ label { color: $hoverpurple;  }
+}
 
 .review-form-rating span {
   display: block;
@@ -168,4 +183,23 @@
   margin-left: 3px;
   position: relative;
   bottom: 3px;
+
+}
+
+.game-score {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-score-number {
+  position: relative;
+  color: $dimgrey;
+  margin-left: 5px;
+}
+
+
+.review-form-container h3 {
+  font-weight: bold;
+  color: $dimgrey;
+  font-size: 22px;
 }
