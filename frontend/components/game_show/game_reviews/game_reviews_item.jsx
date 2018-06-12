@@ -1,5 +1,6 @@
 import React from 'react';
 import EditReviewFormContainer from './edit_review_form_container';
+import { fullStar, emptyStar } from '../../logo';
 
 class GameReviewsItem extends React.Component {
   constructor(props){
@@ -23,10 +24,27 @@ class GameReviewsItem extends React.Component {
     }
   }
 
+  starRating(){
+    let numStars = this.props.review.rating;
+    const numArray = [0,1,2,3,4];
+    const stars = <ul className="review-stars-list">
+      {numArray.map((num) => {
+        if (num < numStars) {
+          return <li>{fullStar}</li>;
+        } else {
+          return <li>{emptyStar}</li>;
+        }
+      })}
+    </ul>;
+    return stars;
+  }
+
   render(){
     const { review, reviewer } = this.props;
 
+
     const reviewerUsername = (reviewer) ? reviewer.username : "Loading";
+
     const reviewButtons = (review && review.user_id === window.currentUser.id) ?
     (<div className="review-buttons">
       <button onClick={this.displayEditForm} className="review-edit-button"> Edit </button>
@@ -48,7 +66,7 @@ class GameReviewsItem extends React.Component {
                 gave it
 
               <div className="review-info-rating">
-                {review.rating}
+                {this.starRating()}
               </div>
               {reviewButtons}
             </div>

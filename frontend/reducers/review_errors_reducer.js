@@ -1,7 +1,8 @@
 import {
   RECEIVE_REVIEW_ERRORS,
   RECEIVE_REVIEW,
-  CLEAR_ERRORS
+  CLEAR_ERRORS,
+  REMOVE_REVIEW
 } from '../actions/review_actions';
 
 export default (state = [], action) => {
@@ -12,6 +13,8 @@ export default (state = [], action) => {
     case CLEAR_ERRORS:
       return [];
     case RECEIVE_REVIEW:
+      return [];
+    case REMOVE_REVIEW:
       return [];
     default:
       return state;

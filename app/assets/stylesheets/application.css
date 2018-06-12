@@ -400,14 +400,22 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   width: 20px; }
 
 .review-form-body {
-  height: 200px;
+  height: 170px;
   width: 100%;
-  border: 1px solid #888888;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid #888888;
+  border-radius: 8px;
   font-size: 20px;
   color: #555555; }
 
 .review-form-body::placeholder {
   font-size: 20px; }
+
+.review-form-body:focus {
+  outline: none !important;
+  border: 2px solid #6441a5;
+  box-shadow: 0 0 10px #555555; }
 
 .review-form-rating {
   height: 35px;
@@ -484,15 +492,20 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   margin-left: 20px; }
 
 .review-form-button {
+  margin-top: 5px;
   background: #6441a5;
   color: white;
-  height: 25px;
-  font-size: 14px; }
+  height: 43px;
+  font-size: 16px;
+  border-radius: 4px; }
 
-.review-form-body:focus {
-  outline: none !important;
-  border: 1px solid #6441a5;
-  box-shadow: 0 0 10px #555555; }
+.review-stars-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin-left: 3px;
+  position: relative;
+  bottom: 3px; }
 
 html {
   min-height: 100vh;

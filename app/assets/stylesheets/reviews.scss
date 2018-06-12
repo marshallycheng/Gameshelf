@@ -1,13 +1,5 @@
-// $textcolor: #9d9d9d;
-
 
 @import url('//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
-
-
-// .review-form-rating {
-//   border: none;
-//   float: left;
-// }
 
 .review-form-rating > input { display: none; }
 .review-form-rating > label:before {
@@ -29,6 +21,7 @@
 }
 
 /***** CSS Magic to Highlight Stars on Hover *****/
+// Credit to James Barnett for this star rating logic
 
 .review-form-rating > input:checked ~ label, /* show gold star when clicked */
 .review-form-rating:not(:checked) > label:hover, /* hover current star */
@@ -47,9 +40,12 @@
 }
 
 .review-form-body {
-  height: 200px;
+  height: 170px;
   width: 100%;
-  border: 1px solid $ashgrey;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid $ashgrey;
+  border-radius: 8px;
   font-size: 20px;
   color: $dimgrey;
 }
@@ -58,17 +54,13 @@
   font-size: 20px;
 }
 
-.review-form-button {
-
+.review-form-body:focus {
+  outline: none !important;
+  border: 2px solid $twitchpurple;
+  box-shadow: 0 0 10px $dimgrey;
 }
 
-.star {
-  // background: green;
-}
 
-.star-checked {
-  // background: red;
-}
 .review-form-rating {
   height: 35px;
   width: 150px;
@@ -78,10 +70,6 @@
 
 .game-reviews-list {
   list-style: none;
-}
-
-.game-review-item {
-  // border: 1px solid black;
 }
 
 .review-info {
@@ -164,14 +152,20 @@
 }
 
 .review-form-button {
+  margin-top: 5px;
   background: $twitchpurple;
   color: $white;
-  height: 25px;
-  font-size: 14px;
+  height: 43px;
+  font-size: 16px;
+  border-radius: 4px;
 }
 
-.review-form-body:focus {
-  outline: none !important;
-  border: 1px solid $twitchpurple;
-  box-shadow: 0 0 10px $dimgrey;
+
+.review-stars-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin-left: 3px;
+  position: relative;
+  bottom: 3px;
 }
