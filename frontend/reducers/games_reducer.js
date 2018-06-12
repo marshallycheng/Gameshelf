@@ -1,5 +1,6 @@
 import merge from 'lodash/merge';
 import { RECEIVE_GAMES, RECEIVE_GAME } from '../actions/game_actions';
+import { RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_actions';
 
 const gamesReducer = (state = {}, action) => {
   Object.freeze(state);

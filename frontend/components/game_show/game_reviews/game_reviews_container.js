@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { selectGameReviews } from '../../../reducers/selectors';
 import GameReviews from './game_reviews';
 
@@ -7,9 +8,9 @@ import GameReviews from './game_reviews';
 
 const msp = (state, ownProps) => {
   const game = state.entities.games[ownProps.gameId];
-
   return {
-    reviews: selectGameReviews(state, game)
+    // should try to clean this up later. need to fix games reducer to append review_id
+    reviews: Object.values(state.entities.reviews).filter((review) => (review.game_id === game.id))
   };
 };
 
@@ -18,4 +19,4 @@ const mdp = dispatch => {
   };
 };
 
-export default (connect(msp, mdp)(GameReviews));
+export default withRouter(connect(msp, mdp)(GameReviews));

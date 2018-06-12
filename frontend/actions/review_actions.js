@@ -47,12 +47,13 @@ export const editReview = (review) => dispatch => {
   .then(serverReview => {
     return dispatch(receiveReview(serverReview));
   }, err => {
+    console.log(err);
     return dispatch(receiveErrors(err.responseJSON));
   });
 };
 
 export const deleteReview = (id) => dispatch => {
-  ReviewAPIUtil.deleteReceive(id)
+  ReviewAPIUtil.deleteReview(id)
   .then(serverReview => {
     return dispatch(removeReview(id));
   });

@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   const review = { rating: 0, body: '', game_id: ownProps.game.id};
   return {
     errors: state.errors.review,
+    callback: () => ownProps.callback(),
     submitButton: 'Submit Review',
     review
   };

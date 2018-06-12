@@ -1,3 +1,4 @@
+@import url("//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -319,6 +320,12 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   color: white;
   width: 100px; }
 
+.send-button:hover {
+  background: #d8d8d8; }
+
+.favorite-button:hover {
+  background: #7d5bbe; }
+
 .send-icon {
   position: relative;
   top: 2px;
@@ -356,14 +363,57 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .genre-tag:not(:last-of-type) {
   margin-right: 5px; }
 
+.review-form-rating > input {
+  display: none; }
+
+.review-form-rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005"; }
+
+.review-form-rating > .half:before {
+  content: "\f089";
+  position: absolute; }
+
+.review-form-rating > label {
+  color: #888888;
+  float: right; }
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+.review-form-rating > input:checked ~ label,
+.review-form-rating:not(:checked) > label:hover,
+.review-form-rating:not(:checked) > label:hover ~ label {
+  color: #6441a5; }
+
+/* hover previous stars in list */
+.review-form-rating > input:checked + label:hover,
+.review-form-rating > input:checked ~ label:hover,
+.review-form-rating > label:hover ~ input:checked ~ label,
+.review-form-rating > input:checked ~ label:hover ~ label {
+  color: #7d5bbe; }
+
 .review-form-rating span {
   display: block;
   height: 20px;
   width: 20px; }
 
+.review-form-body {
+  height: 200px;
+  width: 100%;
+  border: 1px solid #888888;
+  font-size: 20px;
+  color: #555555; }
+
+.review-form-body::placeholder {
+  font-size: 20px; }
+
 .review-form-rating {
-  height: 100px;
-  width: 100px; }
+  height: 35px;
+  width: 150px;
+  position: relative;
+  left: -10px; }
 
 .game-reviews-list {
   list-style: none; }
@@ -410,14 +460,16 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   line-height: 6px; }
 
 .review-edit-button {
-  background: #efefef;
-  color: #555555;
-  width: 40px;
-  font-weight: 700;
+  background: #6441a5;
+  color: white;
+  width: 35px;
   display: inline-flex; }
 
 .review-edit-button:hover {
-  background: #d8d8d8; }
+  background: #7d5bbe; }
+
+.review-edit-close-button {
+  width: 45px; }
 
 .review-delete-button:hover {
   background: #7d5bbe; }
@@ -430,6 +482,17 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 .review-buttons {
   margin-left: 20px; }
+
+.review-form-button {
+  background: #6441a5;
+  color: white;
+  height: 25px;
+  font-size: 14px; }
+
+.review-form-body:focus {
+  outline: none !important;
+  border: 1px solid #6441a5;
+  box-shadow: 0 0 10px #555555; }
 
 html {
   min-height: 100vh;

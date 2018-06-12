@@ -1,5 +1,4 @@
-
-$firebrick: #bb051e;
+$hoverpurple: #7d5bbe;
 
 .content, .game-show-page, .game-show-content {
   background: $searchcolor;
@@ -213,6 +212,13 @@ $firebrick: #bb051e;
   width: 100px;
 }
 
+.send-button:hover {
+  background: $gainsboro;
+}
+
+.favorite-button:hover {
+  background: $hoverpurple;
+}
 .send-icon {
   position: relative;
   top: 2px;

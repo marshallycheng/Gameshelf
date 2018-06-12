@@ -8,13 +8,19 @@ import CreateReviewContainer from './game_reviews/create_review_form_container';
 class GameShow extends React.Component {
   constructor(props){
     super(props);
+    this.updateReviews = this.updateReviews.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchGame(this.props.gameId);
   }
 
+  updateReviews() {
+    this.setState();
+  }
+
   render(){
+    console.log(this.props);
     const { game } = this.props;
     let genres;
     if (game) {
@@ -81,7 +87,7 @@ class GameShow extends React.Component {
 
 
                 </div>
-                <CreateReviewContainer game={game}/>
+                <CreateReviewContainer callback={this.updateReviews} game={game}/>
               </div>
               <div className="game-show-description">
                 {game.description}

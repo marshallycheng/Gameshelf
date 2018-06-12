@@ -7,6 +7,7 @@ class GameReviewForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateRating = this.updateRating.bind(this);
+    // this.props.callback = this.props.callback.bind(this);
     this.state = this.props.review;
   }
 
@@ -22,35 +23,29 @@ class GameReviewForm extends React.Component {
   }
 
   updateRating(num) {
-    return (e) => {
-      this.setState({rating: num});
-      const starElements = document.getElementsByClassName('star');
-      const allStars = Array.prototype.slice.call(starElements);
-      const checkedStars = allStars.slice(0, num);
-
-      allStars.forEach((star) => {
-        star.classList.remove('star-checked');
-      });
-      checkedStars.forEach((star) => {
-        star.classList.add('star-checked');
-      });
-    };
+    this.setState({rating:num});
   }
 
   render() {
+    const header = (this.props.submitButton === "Submit Review") ? <h3>Review this game!</h3> : null;
+
     return (
       <div className="review-form-container">
         <form onSubmit={this.handleSubmit}>
+          {header}
 
-
-
-          <div className="review-form-rating">
-            <span className="star" onClick={this.updateRating(1)}>{emptyStar}</span>
-            <span className="star" onClick={this.updateRating(2)}>{emptyStar}</span>
-            <span className="star" onClick={this.updateRating(3)}>{emptyStar}</span>
-            <span className="star" onClick={this.updateRating(4)}>{emptyStar}</span>
-            <span className="star" onClick={this.updateRating(5)}>{emptyStar}</span>
-          </div>
+          <fieldset className="review-form-rating">
+            <input type="radio" id="star5" name="rating" value="5" onClick={() => this.updateRating(5)} />
+            <label className = "full" htmlFor="star5" title="Awesome - 5 stars"></label>
+            <input type="radio" id="star4" name="rating" value="4" onClick={() => this.updateRating(4)}/>
+            <label className = "full" htmlFor="star4" title="Pretty good - 4 stars"></label>
+            <input type="radio" id="star3" name="rating" value="3" onClick={() => this.updateRating(3)}/>
+            <label className = "full" htmlFor="star3" title="Meh - 3 stars"></label>
+            <input type="radio" id="star2" name="rating" value="2" onClick={() => this.updateRating(2)}/>
+            <label className = "full" htmlFor="star2" title="Kinda bad - 2 stars"></label>
+            <input type="radio" id="star1" name="rating" value="1" onClick={() => this.updateRating(1)}/>
+            <label className = "full" htmlFor="star1" title="Sucks big time - 1 star"></label>
+          </fieldset>
 
           <textarea
             className="review-form-body"

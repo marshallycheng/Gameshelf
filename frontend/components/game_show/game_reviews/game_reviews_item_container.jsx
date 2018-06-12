@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import { deleteReview } from '../../../actions/review_actions';
 import { selectReviewer } from '../../../reducers/selectors';
 import GameReviewsItem from './game_reviews_item';
 
@@ -16,6 +17,7 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return {
+    deleteReview: (id) => dispatch(deleteReview(id))
   };
 };
 

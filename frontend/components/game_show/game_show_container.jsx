@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   const gameId = ownProps.match.params.gameId;
 
   return {
+    reviews: state.entities.reviews,
     game: state.entities.games[gameId],
     gameId
   };
