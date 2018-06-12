@@ -30,9 +30,9 @@ class GameReviewsItem extends React.Component {
     const stars = <ul className="review-stars-list">
       {numArray.map((num) => {
         if (num < numStars) {
-          return <li>{fullStar}</li>;
+          return <li key={`${num}`}>{fullStar}</li>;
         } else {
-          return <li>{emptyStar}</li>;
+          return <li key={`${num}`}>{emptyStar}</li>;
         }
       })}
     </ul>;
@@ -44,8 +44,8 @@ class GameReviewsItem extends React.Component {
 
 
     const reviewerUsername = (reviewer) ? reviewer.username : "Loading";
-
-    const reviewButtons = (review && review.user_id === window.currentUser.id) ?
+    debugger
+    const reviewButtons = (review && window.currentUser && review.user_id === window.currentUser.id) ?
     (<div className="review-buttons">
       <button onClick={this.displayEditForm} className="review-edit-button"> Edit </button>
       <button onClick={this.handleDelete} className="review-delete-button"> Delete </button>

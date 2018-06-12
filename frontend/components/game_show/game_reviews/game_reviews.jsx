@@ -7,11 +7,9 @@ class GameReviews extends React.Component {
   }
 
   render(){
-    console.log('rendering');
     const { reviews } = this.props;
-    console.log(reviews);
     const allReviews = reviews.map(review => {
-      return <GameReviewsItemContainer review={review} />;
+      return <GameReviewsItemContainer key={review.id} review={review} />;
     });
 
     return (

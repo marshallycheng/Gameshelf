@@ -37,12 +37,12 @@ class GameShow extends React.Component {
 
       {numArray.map((num) => {
         if (num <= numStars) {
-          return <li>{fullStar}</li>;
+          return <li key={`${num}`}>{fullStar}</li>;
         } else if (numStars >= 3.25 && !partialStar) {
           partialStar = true;
-          return <li>{halfStar}</li>;
+          return <li key={`${num}`}>{halfStar}</li>;
         } else {
-          return <li>{emptyStar}</li>;
+          return <li key={`${num}`}>{emptyStar}</li>;
         }
       })}
     </ul>;
