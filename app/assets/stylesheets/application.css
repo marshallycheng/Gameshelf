@@ -367,8 +367,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   width: auto;
   padding: 4px;
   font-size: 12px;
-  font-weight: 400;
-  cursor: pointer; }
+  font-weight: 400; }
 
 .genre-tag:not(:last-of-type) {
   margin-right: 5px; }

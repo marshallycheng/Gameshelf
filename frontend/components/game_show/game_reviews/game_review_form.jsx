@@ -7,7 +7,6 @@ class GameReviewForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateRating = this.updateRating.bind(this);
-    // this.props.callback = this.props.callback.bind(this);
     this.state = this.props.review;
   }
 
@@ -19,10 +18,12 @@ class GameReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state);
+   
     if (this.props.callback) {
       this.props.callback();
     }
+    this.props.processForm(this.state);
+ 
     this.setState({ body: '' });
   }
 

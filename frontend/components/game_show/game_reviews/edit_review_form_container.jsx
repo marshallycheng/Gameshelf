@@ -14,12 +14,13 @@ const mapStateToProps = (state, ownProps) => {
       rating: null,
       body: null
     };
-
+  
   return {
     errors: state.errors.review,
     submitButton: 'Edit Review',
     review,
-    isEditForm: true
+    isEditForm: true,
+    callback: ownProps.callback
   };
 };
 
@@ -32,7 +33,7 @@ const mapDispatchToProps = dispatch => {
 
 class EditReviewForm extends React.Component {
   render() {
-    const { processForm, submitButton, clearErrors, errors, review, isEditForm } = this.props;
+    const { processForm, submitButton, clearErrors, errors, review, isEditForm, callback } = this.props;
     return (
       <GameReviewForm
         processForm={processForm}
@@ -40,6 +41,7 @@ class EditReviewForm extends React.Component {
         clearErrors={clearErrors}
         errors={errors}
         review={review}
+        callback={callback}
       />
   );
   }

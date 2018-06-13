@@ -16,8 +16,7 @@ class GameReviewsItem extends React.Component {
     this.props.deleteReview(this.props.review.id);
   }
 
-  displayEditForm(){
-    debugger
+  displayEditForm(){  
     if (this.state.showComponent === true) {
       this.setState({showComponent: false});
     } else {
@@ -55,8 +54,11 @@ class GameReviewsItem extends React.Component {
     </div>) : <div> </div>;
 
     const componentContent = (this.state.showComponent) ?
-      <li className="game-review-item"><button onClick={this.displayEditForm} className="review-edit-button review-edit-close-button">Close</button><EditReviewFormContainer review={review}/></li> :
-        (<li className="game-review-item">
+      (<li className="game-review-item">
+        <button onClick={this.displayEditForm} className="review-edit-button review-edit-close-button">Close</button>
+        <EditReviewFormContainer callback={this.displayEditForm} review={review}/>  
+      </li>) 
+        : (<li className="game-review-item">
 
             <div className="review-info">
 
