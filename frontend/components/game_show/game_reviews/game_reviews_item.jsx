@@ -17,6 +17,7 @@ class GameReviewsItem extends React.Component {
   }
 
   displayEditForm(){
+    debugger
     if (this.state.showComponent === true) {
       this.setState({showComponent: false});
     } else {
@@ -40,16 +41,17 @@ class GameReviewsItem extends React.Component {
   }
 
   render(){
-    const { review, reviewer } = this.props;
+    const { review, reviewer, currentUserId } = this.props;
 
 
     const reviewerUsername = (reviewer) ? reviewer.username : "Loading";
- 
-    const reviewButtons = (review && window.currentUser && review.user_id === window.currentUser.id) ?
+    console.log(currentUserId);
+
+    const reviewButtons = (review && review.user_id === currentUserId) ?
     (<div className="review-buttons">
       <button onClick={this.displayEditForm} className="review-edit-button"> Edit </button>
       <button onClick={this.handleDelete} className="review-delete-button"> Delete </button>
-      {this.state.showComponent ? <EditReviewFormContainer review={review}/> : null }
+      {this.state.showComponent ? <EditReviewFormContainer callback={this.displayEditForm} review={review}/> : null }
     </div>) : <div> </div>;
 
     const componentContent = (this.state.showComponent) ?

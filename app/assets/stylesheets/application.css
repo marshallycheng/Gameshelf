@@ -193,11 +193,11 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .game-show-title {
   width: 100%;
   color: #555555;
-  font-size: 28px;
+  font-size: 40px;
   font-weight: 500;
   cursor: pointer;
   height: 30px;
-  margin-bottom: 18px; }
+  margin-bottom: 24px; }
 
 .review-form {
   height: 280px;
@@ -524,7 +524,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   color: white;
   height: 43px;
   font-size: 16px;
-  border-radius: 4px; }
+  border-radius: 4px;
+  cursor: pointer; }
 
 .review-stars-list {
   list-style: none;

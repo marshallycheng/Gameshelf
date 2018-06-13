@@ -11,7 +11,8 @@ const msp = (state, ownProps) => {
 
   return {
     review,
-    reviewer: selectReviewer(state, review)
+    reviewer: selectReviewer(state, review),
+    currentUserId: state.session.id
   };
 };
 

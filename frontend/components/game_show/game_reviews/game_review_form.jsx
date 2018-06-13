@@ -20,6 +20,9 @@ class GameReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state);
+    if (this.props.callback) {
+      this.props.callback();
+    }
     this.setState({ body: '' });
   }
 
