@@ -597,7 +597,7 @@ USERNAME_SECOND_HALF = [
 ]
 
 200.times do
-  username = USERNAME_FIRST_HALF.sample.concat(USERNAME_SECOND_HALF.sample)
+  username = USERNAME_FIRST_HALF.sample + USERNAME_SECOND_HALF.sample
   User.create({username: username, password: 'password'})
 end
 
