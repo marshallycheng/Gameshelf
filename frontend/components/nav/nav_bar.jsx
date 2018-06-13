@@ -14,6 +14,7 @@ class NavBar extends React.Component {
     window.location = 'https://github.com/marshallycheng/FSP-Gameshelf';
   }
 
+
   render(){
     return (
       <div className="nav-bar"> 
@@ -22,11 +23,11 @@ class NavBar extends React.Component {
 
         <GameSearchContainer />
 
-        <NavLink to="/" className='link' activeClassName="active">Discover</NavLink>
+        <NavLink exact to="/" className='link' activeClassName="active">Discover</NavLink>
 
         <div className='github-link' onClick={this.goGithub}>Github</div>
 
-        <NavLink to="/profile" className='link profile-link' activeClassName="active">{profileIcon} Profile</NavLink>
+        <NavLink to={`/users/${this.props.currentUserId}`} className='link profile-link' activeClassName="active">{profileIcon} Profile</NavLink>
 
         <div className="logout-button" onClick={() => this.props.logout()}>
           Log out

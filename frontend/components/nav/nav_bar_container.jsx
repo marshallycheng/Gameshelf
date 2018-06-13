@@ -4,6 +4,11 @@ import { Link, withRouter } from 'react-router-dom';
 import NavBar from './nav_bar';
 import { logout } from '../../actions/session_actions';
 
+const mapStatetoProps = state => {
+  return {
+    currentUserId: state.session.id
+  };
+};
 
 
 const mapDispatchToProps = dispatch => {
@@ -12,4 +17,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRouter(connect(null, mapDispatchToProps)(NavBar));
+export default withRouter(connect(mapStatetoProps, mapDispatchToProps)(NavBar));

@@ -1,0 +1,47 @@
+.user-profile-page, .user-profile-content, 
+.user-profile-info, .user-profile-buttons,
+.user-message-button, .user-follow-button,
+.user-profile-middle, .user-profile-middle-left,
+.user-profile-middle-right, .user-profile-games {
+  border: 1px solid $twitchpurple;
+}
+
+.user-profile-page, .user-profile-content {
+  background: $searchcolor;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing:border-box;
+}
+
+.user-profile-content {
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-profile-info {
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  width: 800px;
+}
+
+.user-profile-buttons {
+  box-sizing: border-box;
+  height: 64px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-profile-middle {
+  height: 166px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-profile-games {
+  height: 500px;
+  width: 100vw;
+}
