@@ -16,13 +16,13 @@ $activecolor: #656565;
   border-bottom: 1px solid $searchcolor;
 }
 
-.nav-bar div, .link {
+.link, .github-link, .logout-button {
   cursor: pointer;
   font-size: 16px;
   color: $textcolor;
 }
 
-.nav-bar div:not(:first-child), .nav-bar .link:not(:first-child) {
+.link, .logout-button, .github-link {
   width: 76px;
   height: 43px;
   text-align: center;
@@ -56,6 +56,7 @@ $activecolor: #656565;
   display: flex;
   align-items: center;
   justify-content: left;
+  position: relative;
   cursor: default;
   width: 1300px;
   height: 40px;
@@ -80,6 +81,7 @@ $activecolor: #656565;
   width: 100%;
   padding-left: 15px;
   outline: none;
+  box-sizing: border-box;
 }
 
 #search-placeholder ::placeholder {

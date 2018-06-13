@@ -47,7 +47,6 @@ export const editReview = (review) => dispatch => {
   .then(serverReview => {
     return dispatch(receiveReview(serverReview));
   }, err => {
-    console.log(err);
     return dispatch(receiveErrors(err.responseJSON));
   });
 };

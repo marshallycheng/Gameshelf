@@ -44,7 +44,7 @@ class GameReviewsItem extends React.Component {
 
 
     const reviewerUsername = (reviewer) ? reviewer.username : "Loading";
-    debugger
+ 
     const reviewButtons = (review && window.currentUser && review.user_id === window.currentUser.id) ?
     (<div className="review-buttons">
       <button onClick={this.displayEditForm} className="review-edit-button"> Edit </button>

@@ -26,13 +26,13 @@
   .review-form-rating > label.checked, /* show gold star when clicked */
   .review-form-rating:not(:checked) > label:hover, /* hover current star */
   .review-form-rating:not(:checked) > label.checked ~ label,
-  .review-form-rating:not(:checked) > label:hover ~ label { color: $twitchpurple;  } /* hover previous stars in list */
+  .review-form-rating:not(:checked) > label:hover ~ label { color: $twitchpurple; transition: color .5s;  } /* hover previous stars in list */
 
   .review-form-rating > label.checked + label:hover, /* hover current star when changing rating */
   .review-form-rating > label.checked ~ label:hover,
   .review-form-rating > label:hover ~ label.checked ~ label, /* lighten current selection */
   .review-form-rating > label:hover ~ label.checked, /* lighten current selection */
-  .review-form-rating > label.checked ~ label:hover ~ label { color: $hoverpurple;  }
+  .review-form-rating > label.checked ~ label:hover ~ label { color: $hoverpurple; }
 }
 
 .game-review-item  {

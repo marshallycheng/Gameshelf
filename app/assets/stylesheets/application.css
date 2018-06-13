@@ -28,12 +28,12 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   box-sizing: border-box;
   border-bottom: 1px solid #efefef; }
 
-.nav-bar div, .link {
+.link, .github-link, .logout-button {
   cursor: pointer;
   font-size: 16px;
   color: #b5b5b5; }
 
-.nav-bar div:not(:first-child), .nav-bar .link:not(:first-child) {
+.link, .logout-button, .github-link {
   width: 76px;
   height: 43px;
   text-align: center;
@@ -61,6 +61,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   display: flex;
   align-items: center;
   justify-content: left;
+  position: relative;
   cursor: default;
   width: 1300px;
   height: 40px;
@@ -82,7 +83,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   height: 40px;
   width: 100%;
   padding-left: 15px;
-  outline: none; }
+  outline: none;
+  box-sizing: border-box; }
 
 #search-placeholder ::placeholder {
   color: #888888;
@@ -119,7 +121,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  left: 7px;
+  position: relative; }
 
 .game-cover-art {
   width: 240px;
@@ -145,7 +149,13 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   background: white;
   display: flex;
   flex-direction: row;
-  justify-content: center; }
+  justify-content: center;
+  position: absolute;
+  top: 64px; }
+
+.darken {
+  filter: brightness(60%);
+  transition: filter 1s; }
 
 .content, .game-show-page, .game-show-content {
   background: #efefef;
@@ -388,7 +398,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   .container-content .game-details .review-form-rating:not(:checked) > label:hover,
   .container-content .game-details .review-form-rating:not(:checked) > label.checked ~ label,
   .container-content .game-details .review-form-rating:not(:checked) > label:hover ~ label {
-    color: #6441a5; }
+    color: #6441a5;
+    transition: color .5s; }
   .container-content .game-details .review-form-rating > label.checked + label:hover,
   .container-content .game-details .review-form-rating > label.checked ~ label:hover,
   .container-content .game-details .review-form-rating > label:hover ~ label.checked ~ label,
@@ -536,6 +547,42 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-weight: bold;
   color: #555555;
   font-size: 22px; }
+
+#search-results-container {
+  width: 100%;
+  background: white;
+  position: absolute;
+  border-radius: 6px;
+  top: 36px;
+  z-index: 2; }
+
+.search-results-list {
+  list-style: none;
+  padding: 10px 0px 10px 0px; }
+
+.search-item-image {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  margin-right: 10px; }
+
+.search-results-item {
+  height: 50px;
+  box-sizing: border-box;
+  padding: 5px 0px 0px 15px; }
+
+.search-results-item:hover {
+  background: #efefef;
+  cursor: pointer; }
+
+.search-item-div {
+  color: #555555;
+  font-weight: 500;
+  line-height: 40px;
+  display: flex; }
+
+.hide-results {
+  display: none; }
 
 html {
   min-height: 100vh;

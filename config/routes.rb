@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :games, only: [:index, :show] do
       resources :reviews, only: [:index]
     end
+    resources :searches, only: [:index]
     resources :reviews, only: [:create, :update, :destroy, :show]
     resource :session, only: [:create, :destroy, :show]
   end

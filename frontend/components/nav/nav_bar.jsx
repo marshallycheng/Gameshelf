@@ -1,23 +1,13 @@
 import React from 'react';
 import {mainLogo, searchIcon, profileIcon} from '../logo';
 import { Redirect, Link, NavLink } from 'react-router-dom';
+import GameSearchContainer from '../game_search/game_search_container';
 
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-  }
 
-  addSearchBorder(){
-    const search = document.getElementById('search-placeholder');
-
-    search.classList.add('search-focus');
-  }
-
-  removeSearchBorder(){
-    const search = document.getElementById('search-placeholder');
-
-    search.classList.remove('search-focus');
   }
 
   goGithub(){
@@ -26,23 +16,21 @@ class NavBar extends React.Component {
 
   render(){
     return (
-      <div className="nav-bar">
+      <div className="nav-bar"> 
 
-        <NavLink to="/" activeClassName="active">{mainLogo}</NavLink>
+        <NavLink to="/" activeClassName="active" className="main-logo">{mainLogo}</NavLink>
 
-        <div id="search-placeholder" onFocus={this.addSearchBorder} onBlur={this.removeSearchBorder}>
-          {searchIcon}
-          <input type="text" maxLength="100" placeholder="Search"/>
-        </div>
+        <GameSearchContainer />
 
         <NavLink to="/" className='link' activeClassName="active">Discover</NavLink>
+
         <div className='github-link' onClick={this.goGithub}>Github</div>
+
         <NavLink to="/profile" className='link profile-link' activeClassName="active">{profileIcon} Profile</NavLink>
 
         <div className="logout-button" onClick={() => this.props.logout()}>
           Log out
         </div>
-
 
       </div>
     );
