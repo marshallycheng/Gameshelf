@@ -17,6 +17,12 @@ class GameShow extends React.Component {
     window.scrollTo(0,0);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.gameId !== nextProps.match.params.gameId) {
+      this.props.fetchGame(nextProps.match.params.gameId);
+    }
+  }
+
   updateReviews() {
     this.setState();
   }

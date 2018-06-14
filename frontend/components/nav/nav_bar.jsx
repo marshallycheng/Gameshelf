@@ -10,13 +10,17 @@ class NavBar extends React.Component {
 
   }
 
+  ComponentDidMount(){
+    this.props.fetchUser(this.props.currentUserId);
+  }
+
   goGithub(){
     window.location = 'https://github.com/marshallycheng/FSP-Gameshelf';
   }
 
 
   render(){
-    const userAvatar = (this.props.currentUser)
+    const userAvatar = (this.props.currentUserId && this.props.currentUser)
      ? <img
         className="nav-user-avatar"
         src={`${this.props.currentUser.image_url}`}

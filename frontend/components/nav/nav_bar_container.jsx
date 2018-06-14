@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import NavBar from './nav_bar';
 import { logout } from '../../actions/session_actions';
+import { fetchUser } from '../../actions/user_actions';
 
 const mapStatetoProps = state => {
   const currentUserId = state.session.id;
@@ -16,7 +17,8 @@ const mapStatetoProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchUser: (id) => dispatch(fetchUser(id))
   };
 };
 

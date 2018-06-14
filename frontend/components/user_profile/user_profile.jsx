@@ -10,8 +10,15 @@ class UserProfile extends React.Component {
 
   componentDidMount(){
     this.props.fetchUser(this.props.userId);
+    
     this.props.fetchGames();
     window.scrollTo(0, 0);
+  }
+
+  componentWillReceiveProps(nextProps){
+    if (this.props.match.params.userId !== nextProps.match.params.userId) {
+      this.props.fetchUser(nextProps.match.params.userId);
+    }
   }
 
   randomSelection(num){
@@ -32,9 +39,13 @@ class UserProfile extends React.Component {
       const { games, user} = this.props;
       const reviewText = (user.review_ids.length === 1) ? "review" : "reviews";
       const favoriteText = (user.favorited_game_ids.length === 1) ? "favorite" : "favorites";
-      const favoritedGames = games 
+      const favoritedGames = games.length > 0 
       ? games.map(game => {
-          return <GameIndexItem key={game.id} game={game} />;
+          if (game) {
+            return <GameIndexItem key={game.id} game={game} />;
+          } else {
+            return <div></div>;
+          }
         })
       : 'loading';
 

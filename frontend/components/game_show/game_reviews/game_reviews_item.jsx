@@ -93,7 +93,7 @@ class GameReviewsItem extends React.Component {
             {review.body}
           </div>
         </li>);
-    return review ? (
+    return review && reviewer && reviewer.image_url ? (
       <div>{componentContent}</div>
     ) : <div></div>;
   }

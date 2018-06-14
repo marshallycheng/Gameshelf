@@ -374,6 +374,49 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .genre-tag:not(:last-of-type) {
   margin-right: 5px; }
 
+.review-top {
+  display: flex;
+  justify-content: space-between; }
+
+.amazon-link, .steam-link, .download-link {
+  cursor: pointer; }
+
+.amazon-link {
+  width: 100px;
+  height: 50px;
+  background: white;
+  position: relative;
+  right: 212px; }
+
+.steam-link {
+  width: 100px;
+  height: 30px;
+  border-radius: 8px;
+  position: relative;
+  right: 202px;
+  top: 3px; }
+
+.download-icon {
+  height: 18px;
+  width: 18px;
+  position: relative;
+  top: 4px; }
+
+.download-link {
+  background: #6441a5;
+  color: white;
+  height: 43px;
+  width: 112px;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 6px;
+  position: relative;
+  right: 191px;
+  top: 4px; }
+
+.download-link:hover {
+  background: #7d5bbe; }
+
 .review-form-rating > input {
   display: none; }
 

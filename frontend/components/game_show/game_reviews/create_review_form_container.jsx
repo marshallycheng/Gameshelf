@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
     errors: state.errors.review,
     callback: () => ownProps.callback(),
     submitButton: 'Submit Review',
-    review
+    review,
+    game: ownProps.game
   };
 };
 
