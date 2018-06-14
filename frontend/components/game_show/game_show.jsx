@@ -9,6 +9,7 @@ class GameShow extends React.Component {
   constructor(props){
     super(props);
     this.updateReviews = this.updateReviews.bind(this);
+    this.toggleFavorite = this.toggleFavorite.bind(this);
   }
 
   componentDidMount() {
@@ -49,17 +50,28 @@ class GameShow extends React.Component {
     return stars;
   }
 
+  toggleFavorite(){
+    if (this.props.game.favorited_user_ids.includes(this.props.currentUserId)) {
+      this.props.deleteFavorite(this.props.game.id);
+    } else {
+      this.props.createFavorite({user_id: this.props.currentUserId, game_id: this.props.game.id});
+    }
+  }
+
   render(){
-    console.log(this.props);
-    const { game } = this.props;
-    let genres;
+    const { game, currentUserId } = this.props;
+    
+    let genres; 
+    let favoriteText;
     if (game) {
+      // favoriteText = game.favorited_user_ids.includes(currentUserId) ? 'Unfavorite' : 'Favorite'; 
       if (game.genres) {
         genres = game.genres.map(genre => {
           return <span className="genre-tag" key={genre}>{genre}</span>;
         });
       }
     } else {
+      favoriteText = 'loading';
       genres = [];
     }
 
@@ -75,7 +87,7 @@ class GameShow extends React.Component {
           <div className="game-show-container">
             <div className="container-links">
               <button className="send-button">{sendIcon} Send</button>
-              <button className="favorite-button">{favoriteIcon} Favorite</button>
+              <button className="favorite-button" >{favoriteIcon} Favorite</button>
             </div>
             <div className="container-content">
               <span className="game-show-title">
