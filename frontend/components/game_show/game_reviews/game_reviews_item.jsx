@@ -1,6 +1,7 @@
 import React from 'react';
 import EditReviewFormContainer from './edit_review_form_container';
 import { fullStar, emptyStar } from '../../logo';
+import { Redirect } from 'react-router-dom';
 
 class GameReviewsItem extends React.Component {
   constructor(props){
@@ -10,6 +11,7 @@ class GameReviewsItem extends React.Component {
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.displayEditForm = this.displayEditForm.bind(this);
+    this.goUserProfile = this.goUserProfile.bind(this);
   }
 
   handleDelete(){
@@ -39,12 +41,14 @@ class GameReviewsItem extends React.Component {
     return stars;
   }
 
+  goUserProfile() {
+    window.location.href = `/#/users/${this.props.reviewer.id}`;
+  }
+
   render(){
     const { review, reviewer, currentUserId } = this.props;
-
-
     const reviewerUsername = (reviewer) ? reviewer.username : "Loading";
-    console.log(currentUserId);
+
 
     const reviewButtons = (review && review.user_id === currentUserId) ?
     (<div className="review-buttons">
@@ -63,10 +67,14 @@ class GameReviewsItem extends React.Component {
             <div className="review-info">
 
             <div className="review-info-left">
-              <div className="review-info-username">
+              <img
+                className="review-info-avatar"
+                src={`${reviewer.image_url}`}
+                onClick={this.goUserProfile}
+              />
+              <div className="review-info-username" onClick={this.goUserProfile}>
                 {reviewerUsername}
               </div>
-
                 gave it
 
               <div className="review-info-rating">

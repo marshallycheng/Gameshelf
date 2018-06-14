@@ -16,6 +16,13 @@ class NavBar extends React.Component {
 
 
   render(){
+    const userAvatar = (this.props.currentUser)
+     ? <img
+        className="nav-user-avatar"
+        src={`${this.props.currentUser.image_url}`}
+      />  
+    : profileIcon;
+
     return (
       <div className="nav-bar"> 
 
@@ -27,7 +34,13 @@ class NavBar extends React.Component {
 
         <div className='github-link' onClick={this.goGithub}>Github</div>
 
-        <NavLink to={`/users/${this.props.currentUserId}`} className='link profile-link' activeClassName="active">{profileIcon} Profile</NavLink>
+        <NavLink
+          to={`/users/${this.props.currentUserId}`} 
+          className='link profile-link'
+          activeClassName="active">
+          {userAvatar}      
+          Profile
+        </NavLink>
 
         <div className="logout-button" onClick={() => this.props.logout()}>
           Log out

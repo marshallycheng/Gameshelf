@@ -105,6 +105,17 @@
   font-size: 16px;
   color: $dimgrey;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.review-info-avatar {
+  cursor: pointer;
+  height: 22px;
+  width: 22px;
+  border-radius: 22px;
+  position: relative;
+  bottom: 2px;
+  margin-right: 5px;
 }
 .review-info-date {
   color: $dimgrey;
