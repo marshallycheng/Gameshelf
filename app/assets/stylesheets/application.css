@@ -676,11 +676,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 .games-header {
   color: #555555;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 500;
-  text-align: left;
-  position: relative;
-  right: 308px; }
+  align-self: flex-start;
+  margin-left: 444px; }
 
 .user-message-button, .user-follow-button {
   box-sizing: border-box;
@@ -743,7 +742,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   overflow: hidden; }
 
 .user-profile-games {
-  width: 100vw;
+  width: 65vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; }

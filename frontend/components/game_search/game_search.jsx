@@ -11,39 +11,26 @@ class GameSearch extends React.Component {
     };
     this.debounceSearch = this.debounceSearch.bind(this);
     this.focusSearch = this.focusSearch.bind(this);
-    this.unfocusSearch = this.unfocusSearch.bind(this);
   }
   addSearchBorder(){
     const search = document.getElementById('search-placeholder');
     search.classList.add('search-focus');
   }
 
-  removeSearchBorder(){
-    const search = document.getElementById('search-placeholder');
-    search.classList.remove('search-focus');
-  }
-
+  
   displayResults(){
     const results = document.getElementById('search-results-container');
     results.classList.remove('hide-results');
   }
-
-  hideResults(){
-    const results = document.getElementById('search-results-container');
-    results.classList.add('hide-results');
-  }
-
+  
+  
   darkenScreen(){
     const content = document.getElementsByClassName('games-index-content')[0] 
     || document.getElementsByClassName('user-profile-content')[0];
     content.classList.add('darken');
   }
-
-  lightenScreen(){
-    const content = document.getElementsByClassName('games-index-content')[0] 
-    || document.getElementsByClassName('user-profile-content')[0];
-    content.classList.remove('darken');
-  }
+  
+  
 
   focusSearch(){
     this.addSearchBorder();
@@ -51,11 +38,7 @@ class GameSearch extends React.Component {
     this.displayResults();
   }
 
-   unfocusSearch(){
-    this.removeSearchBorder();
-    this.lightenScreen();
-    this.hideResults();
-  }
+
 
 
   debounceSearch(func, delay) {
@@ -79,7 +62,7 @@ class GameSearch extends React.Component {
   render(){
     const { fetchSearchGames, searchResults } = this.props;
     return (
-      <div id="search-placeholder" onFocus={this.focusSearch} onBlur={() => setTimeout(this.unfocusSearch, 100)}>
+      <div id="search-placeholder" onFocus={this.focusSearch} >
         {searchIcon}
         <input type="text" maxLength="100" placeholder="Search" onChange={this.debounceSearch(this.performSearch, 250)}/>
         <div id="search-results-container">

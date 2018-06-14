@@ -6,6 +6,7 @@ import { profileSendIcon, flagIcon } from '../logo';
 class UserProfile extends React.Component {
   constructor(props){
     super(props);
+    this.unfocusSearch = this.unfocusSearch.bind(this);
   }
 
   componentDidMount(){
@@ -34,6 +35,29 @@ class UserProfile extends React.Component {
     return array;
   }
 
+  removeSearchBorder() {
+    const search = document.getElementById('search-placeholder');
+    search.classList.remove('search-focus');
+  }
+
+  hideResults() {
+    const results = document.getElementById('search-results-container');
+    results.classList.add('hide-results');
+  }
+
+  lightenScreen() {
+    const content = document.getElementsByClassName('games-index-content')[0]
+      || document.getElementsByClassName('user-profile-content')[0];
+    content.classList.remove('darken');
+  }
+
+  unfocusSearch() {
+    this.removeSearchBorder();
+    this.lightenScreen();
+    this.hideResults();
+  }
+
+
   render(){
     if (this.props.user) {
       const { games, user} = this.props;
@@ -52,7 +76,7 @@ class UserProfile extends React.Component {
       return (
         <div className="user-profile-page">
           <NavBarContainer />
-          <div className="user-profile-content">
+          <div className="user-profile-content" onClick={this.unfocusSearch}>
             <div className="user-profile-info">
               <div className="user-profile-buttons">
                 <div className="user-left-buttons">
