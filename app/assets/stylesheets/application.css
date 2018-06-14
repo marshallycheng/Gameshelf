@@ -681,8 +681,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 .user-profile-image {
   height: 166px;
-  width: 166px;
-  left: 5px; }
+  width: 166px; }
 
 .user-profile-middle-right {
   border-radius: 166px;

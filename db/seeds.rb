@@ -10,8 +10,8 @@ User.destroy_all
 Game.destroy_all
 Review.destroy_all
 
-User.create({username: 'DemoUser', password: 'password'})
-User.create({username: 'Marshall', password: 'password'})
+User.create({username: 'DemoUser', password: 'password', image_url: 'https://i.imgur.com/KvTztZQ.png'})
+User.create({username: 'Marshall', password: 'password', image_url: 'https://i.imgur.com/OEl6b22.png'})
 
 GAME_NAMES = [
   "Fortnite",
@@ -596,9 +596,34 @@ USERNAME_SECOND_HALF = [
   "Manticore"
 ]
 
+PROFILE_IMAGES = [
+  "https://i.imgur.com/g0HNjlA.png",
+  "https://i.imgur.com/I0JAAcU.png",
+  "https://i.imgur.com/yCZRV5R.png",
+  "https://i.imgur.com/Nm5Y86B.png",
+  "https://i.imgur.com/OEl6b22.png",
+  "https://i.imgur.com/QE0xyAr.png",
+  "https://i.imgur.com/HqKaHzh.png",
+  "https://i.imgur.com/ZiTuiAe.png",
+  "https://i.imgur.com/KvTztZQ.png",
+  "https://i.imgur.com/wWO57H4.png",
+  "https://i.imgur.com/XDJNTuy.png",
+  "https://i.imgur.com/XWY7c8u.png",
+  "https://i.imgur.com/JjbFtBo.png",
+  "https://i.imgur.com/4GeXWDE.png",
+  "https://i.imgur.com/rqvpnoO.png",
+  "https://i.imgur.com/dMUDeN7.png",
+  "https://i.imgur.com/furEwil.png",
+  "https://i.imgur.com/tucj2RB.png",
+  "https://i.imgur.com/wbfRrqJ.png",
+  "https://i.imgur.com/MoUE4WK.png",
+  "https://i.imgur.com/iTSdkry.png"
+]
+
 200.times do
   username = USERNAME_FIRST_HALF.sample + USERNAME_SECOND_HALF.sample
-  User.create({username: username, password: 'password'})
+  image = PROFILE_IMAGES.sample
+  User.create({username: username, password: 'password', image_url: image})
 end
 
 REVIEW_BODY = {

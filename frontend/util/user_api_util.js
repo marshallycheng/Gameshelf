@@ -4,5 +4,3 @@ export const fetchUser = id => (
         url: `/api/users/${id}`
     })
 );
-
-// probably dont need any of this

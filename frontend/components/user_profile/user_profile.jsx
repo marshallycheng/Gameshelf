@@ -9,6 +9,7 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount(){
+    this.props.fetchUser(this.props.userId);
     this.props.fetchGames();
   }
 
@@ -26,51 +27,59 @@ class UserProfile extends React.Component {
   }
 
   render(){
-    const { games, currentUser} = this.props;
-    const reviewText = (currentUser.review_ids.length === 1) ? "review" : "reviews";
-    return (
-      <div className="user-profile-page">
-        <NavBarContainer />
-        <div className="user-profile-content">
-          <div className="user-profile-info">
-            <div className="user-profile-buttons">
-              <div className="user-left-buttons">
-                  {profileSendIcon}
-                  {flagIcon}
-              </div>
-              <div className="user-right-buttons">
-                <button className="user-message-button">Message</button>
-                <button className="user-follow-button">Follow</button>
-              </div>
-            </div>
-            <div className="user-profile-middle">
-              <div className="user-profile-middle-left">
-                <div className="user-profile-username">
-                  {currentUser.username}
+    if (this.props.user) {
+      const { games, user} = this.props;
+      const reviewText = (user.review_ids.length === 1) ? "review" : "reviews";
+      return (
+        <div className="user-profile-page">
+          <NavBarContainer />
+          <div className="user-profile-content">
+            <div className="user-profile-info">
+              <div className="user-profile-buttons">
+                <div className="user-left-buttons">
+                    {profileSendIcon}
+                    {flagIcon}
                 </div>
-                <div className="user-profile-reviews-favorites">
-                  {currentUser.review_ids.length} {reviewText} · 10 favorites
+                <div className="user-right-buttons">
+                  <button className="user-message-button">Message</button>
+                  <button className="user-follow-button">Follow</button>
                 </div>
               </div>
-              <div className="user-profile-middle-right">
-                <img
-                  className="user-profile-image"
-                  src={`https://thumbs.dreamstime.com/z/man-virtual-reality-cyber-play-video-game-wear-digital-glasses-profile-icon-flat-design-vector-illustration-69046697.jpg`}
-                />
+              <div className="user-profile-middle">
+                <div className="user-profile-middle-left">
+                  <div className="user-profile-username">
+                    {user.username}
+                  </div>
+                  <div className="user-profile-reviews-favorites">
+                    {user.review_ids.length} {reviewText} · 10 favorites
+                  </div>
+                </div>
+                <div className="user-profile-middle-right">
+                  <img
+                    className="user-profile-image"
+                    src={`${user.image_url}`}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="games-header">
-            Check out these games!
-          </div>
-          <div className="user-profile-games">
-            {this.randomSelection(14).map(game => {
-              return <GameIndexItem key={game.id} game={game}/>;
-            })}
+            <div className="games-header">
+              Check out these games!
+            </div>
+            <div className="user-profile-games">
+              {this.randomSelection(14).map(game => {
+                return <GameIndexItem key={game.id} game={game}/>;
+              })}
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div>
+          loading
+        </div>
+      );
+    }
   }
 }
 export default UserProfile;
