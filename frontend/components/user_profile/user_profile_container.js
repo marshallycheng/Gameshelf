@@ -2,13 +2,14 @@ import { connect } from 'react-redux';
 import UserProfile from './user_profile';
 import { fetchGames } from '../../actions/game_actions';
 import { fetchUser } from '../../actions/user_actions';
+import { selectFavoritedGames } from '../../reducers/selectors';
 
 const msp = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
-
+  const user = state.entities.users[userId];
   return {
-    user: state.entities.users[userId],
-    games: Object.values(state.entities.games),
+    user,
+    games: selectFavoritedGames(state, user),
     userId
   };
 };

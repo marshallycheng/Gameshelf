@@ -32,6 +32,12 @@ class UserProfile extends React.Component {
       const { games, user} = this.props;
       const reviewText = (user.review_ids.length === 1) ? "review" : "reviews";
       const favoriteText = (user.favorited_game_ids.length === 1) ? "favorite" : "favorites";
+      const favoritedGames = games 
+      ? games.map(game => {
+          return <GameIndexItem key={game.id} game={game} />;
+        })
+      : 'loading';
+
       return (
         <div className="user-profile-page">
           <NavBarContainer />
@@ -65,12 +71,10 @@ class UserProfile extends React.Component {
               </div>
             </div>
             <div className="games-header">
-              Check out these games!
+              Favorited Games
             </div>
             <div className="user-profile-games">
-              {this.randomSelection(14).map(game => {
-                return <GameIndexItem key={game.id} game={game}/>;
-              })}
+              {favoritedGames}
             </div>
           </div>
         </div>
