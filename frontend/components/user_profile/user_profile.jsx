@@ -31,6 +31,7 @@ class UserProfile extends React.Component {
     if (this.props.user) {
       const { games, user} = this.props;
       const reviewText = (user.review_ids.length === 1) ? "review" : "reviews";
+      const favoriteText = (user.favorited_game_ids.length === 1) ? "favorite" : "favorites";
       return (
         <div className="user-profile-page">
           <NavBarContainer />
@@ -52,7 +53,7 @@ class UserProfile extends React.Component {
                     {user.username}
                   </div>
                   <div className="user-profile-reviews-favorites">
-                    {user.review_ids.length} {reviewText} · 10 favorites
+                    {user.review_ids.length} {reviewText} · {user.favorited_game_ids.length} {favoriteText}
                   </div>
                 </div>
                 <div className="user-profile-middle-right">

@@ -651,3 +651,14 @@ Game.all.each do |game|
     })
   end
 end
+
+User.all.each do |user|
+  number_favorites = rand(10..20)
+  
+  number_favorites.times do 
+    game_index = rand(Game.all.length - 1)
+    game = Game.all[game_index]
+
+    Favorite.create({user_id: user.id, game_id: game.id})
+  end 
+end 

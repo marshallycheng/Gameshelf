@@ -6,6 +6,11 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6}, allow_nil: true
 
   has_many :reviews
+  has_many :favorites
+  
+  has_many :favorited_games,
+  through: :favorites,
+  source: :game
 
   before_validation :ensure_session_token
 
