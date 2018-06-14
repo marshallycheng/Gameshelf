@@ -1,7 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../nav/nav_bar_container';
 import GameIndexItem from './game_index_item';
-import GameSearchContainer from '../game_search/game_search_container';
 
 class GameIndex extends React.Component {
   constructor(props){

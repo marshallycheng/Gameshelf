@@ -8,17 +8,25 @@ class UserProfile extends React.Component {
 
   render(){
     const {currentUser} = this.props;
+    const reviewText = (currentUser.review_ids.length === 1) ? "review" : "reviews";
+    
     return (
       <div className="user-profile-page">
         <NavBarContainer />
         <div className="user-profile-content">
           <div className="user-profile-info">
             <div className="user-profile-buttons">
-              <button className="user-message-button"></button>
-              <button className="user-follow-button"></button>
+              <button className="user-message-button">Message</button>
+              <button className="user-follow-button">Follow</button>
             </div>
             <div className="user-profile-middle">
               <div className="user-profile-middle-left">
+                <div className="user-profile-username">
+                  {currentUser.username}
+                </div>
+                <div className="user-profile-reviews-favorites">
+                  {currentUser.review_ids.length} {reviewText} · 10 favorites
+                </div>
               </div>
               <div className="user-profile-middle-right">
                 <img

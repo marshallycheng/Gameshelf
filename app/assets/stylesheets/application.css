@@ -616,10 +616,61 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   display: flex;
   justify-content: flex-end; }
 
+.user-message-button, .user-follow-button {
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer; }
+
+.user-follow-button {
+  width: 75px;
+  height: 40px;
+  align-self: center;
+  margin-left: 10px;
+  background: #6441a5;
+  color: white; }
+
+.user-message-button {
+  width: 95px;
+  height: 40px;
+  align-self: center;
+  background: #efefef;
+  color: #555555;
+  font-weight: 500; }
+
+.user-message-button:hover {
+  background: #d8d8d8; }
+
+.user-follow-button:hover {
+  background: #7d5bbe; }
+
 .user-profile-middle {
   height: 166px;
   display: flex;
   justify-content: space-between; }
+
+.user-profile-username {
+  font-size: 36px;
+  font-weight: 700;
+  color: #555555; }
+
+.user-profile-reviews-favorites {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555555; }
+
+.user-profile-middle-left {
+  width: 600px;
+  height: 120px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.user-profile-image {
+  height: 166px;
+  width: 166px; }
 
 .user-profile-games {
   height: 500px;

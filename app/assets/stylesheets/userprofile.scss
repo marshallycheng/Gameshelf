@@ -35,10 +35,71 @@
   justify-content: flex-end;
 }
 
+.user-message-button, .user-follow-button {
+  box-sizing: border-box;
+  padding: 8px;
+  // border: none
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.user-follow-button {
+  width: 75px;
+  height: 40px;
+  align-self: center;
+  margin-left: 10px;
+  background: $twitchpurple;
+  color: $white;
+
+}
+
+.user-message-button {
+  width: 95px;
+  height: 40px;
+  align-self: center;
+  background: $searchcolor;
+  color: $dimgrey;
+  font-weight: 500;
+}
+
+.user-message-button:hover {
+  background: $gainsboro;
+}
+.user-follow-button:hover {
+  background: $hoverpurple;
+}
+
 .user-profile-middle {
   height: 166px;
   display: flex;
   justify-content: space-between;
+}
+
+.user-profile-username {
+  font-size: 36px;
+  font-weight: 700;
+  color: $dimgrey;
+}
+
+.user-profile-reviews-favorites {
+  font-size: 14px;
+  font-weight: 500;
+  color: $dimgrey;
+}
+
+.user-profile-middle-left {
+  width: 600px;
+  height: 120px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-profile-image {
+  height: 166px;
+  width: 166px;
 }
 
 .user-profile-games {

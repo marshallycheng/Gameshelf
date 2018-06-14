@@ -34,12 +34,14 @@ class GameSearch extends React.Component {
   }
 
   darkenScreen(){
-    const content = document.getElementsByClassName('games-index-content')[0];
+    const content = document.getElementsByClassName('games-index-content')[0] 
+    || document.getElementsByClassName('user-profile-content')[0];
     content.classList.add('darken');
   }
 
   lightenScreen(){
-    const content = document.getElementsByClassName('games-index-content')[0];
+    const content = document.getElementsByClassName('games-index-content')[0] 
+    || document.getElementsByClassName('user-profile-content')[0];
     content.classList.remove('darken');
   }
 
