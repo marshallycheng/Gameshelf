@@ -584,13 +584,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .hide-results {
   display: none; }
 
-.user-profile-page, .user-profile-content,
-.user-profile-info, .user-profile-buttons,
-.user-message-button, .user-follow-button,
-.user-profile-middle, .user-profile-middle-left,
-.user-profile-middle-right, .user-profile-games {
-  border: 1px solid #6441a5; }
-
 .user-profile-page, .user-profile-content {
   background: #efefef;
   min-height: 100vh;
@@ -608,13 +601,31 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   display: flex;
   flex-direction: column;
   align-content: space-between;
-  width: 800px; }
+  width: 800px;
+  margin-top: 20px; }
 
 .user-profile-buttons {
   box-sizing: border-box;
   height: 64px;
   display: flex;
-  justify-content: flex-end; }
+  justify-content: space-between; }
+
+.profile-send-icon, .flag-icon {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  top: 12px; }
+
+.profile-send-icon {
+  margin-right: 25px; }
+
+.games-header {
+  color: #555555;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: left;
+  position: relative;
+  right: 315px; }
 
 .user-message-button, .user-follow-button {
   box-sizing: border-box;
@@ -670,11 +681,18 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 .user-profile-image {
   height: 166px;
-  width: 166px; }
+  width: 166px;
+  left: 5px; }
+
+.user-profile-middle-right {
+  border-radius: 166px;
+  overflow: hidden; }
 
 .user-profile-games {
-  height: 500px;
-  width: 100vw; }
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
 
 html {
   min-height: 100vh;
