@@ -209,7 +209,12 @@ $hoverpurple: #7d5bbe;
   background: $twitchpurple;
   margin-left: 15px;
   color: $white;
-  width: 100px;
+  width: 115px;
+  outline: none;
+}
+
+.favorite-button:active {
+  box-shadow: 0 0 5px rgb(19, 17, 17);
 }
 
 .send-button:hover {

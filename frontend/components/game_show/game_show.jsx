@@ -8,12 +8,16 @@ import CreateReviewContainer from './game_reviews/create_review_form_container';
 class GameShow extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+    };
+
     this.updateReviews = this.updateReviews.bind(this);
     this.toggleFavorite = this.toggleFavorite.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchGame(this.props.gameId);
+    this.props.fetchFavorites();
     window.scrollTo(0,0);
   }
 
@@ -58,9 +62,11 @@ class GameShow extends React.Component {
 
   toggleFavorite(){
     if (this.props.game.favorited_user_ids.includes(this.props.currentUserId)) {
-      this.props.deleteFavorite(this.props.game.id);
+      this.props.deleteFavorite(this.props.favorite.id);
+      this.setState({favoriteStatus: false});
     } else {
       this.props.createFavorite({user_id: this.props.currentUserId, game_id: this.props.game.id});
+      this.setState({ favoriteStatus: true });
     }
   }
 
@@ -69,15 +75,15 @@ class GameShow extends React.Component {
     
     let genres; 
     let favoriteText;
-    if (game) {
-      // favoriteText = game.favorited_user_ids.includes(currentUserId) ? 'Unfavorite' : 'Favorite'; 
+    if (game && game.favorited_user_ids) {
+      favoriteText = game.favorited_user_ids.includes(currentUserId) ? 'Unfavorite' : 'Favorite'; 
       if (game.genres) {
         genres = game.genres.map(genre => {
           return <span className="genre-tag" key={genre}>{genre}</span>;
         });
       }
     } else {
-      favoriteText = 'loading';
+      favoriteText = 'Favorite';
       genres = [];
     }
 
@@ -93,7 +99,7 @@ class GameShow extends React.Component {
           <div className="game-show-container">
             <div className="container-links">
               <button className="send-button">{sendIcon} Send</button>
-              <button className="favorite-button" >{favoriteIcon} Favorite</button>
+              <button className="favorite-button" onClick={this.toggleFavorite}>{favoriteIcon} {favoriteText}</button>
             </div>
             <div className="container-content">
               <span className="game-show-title">

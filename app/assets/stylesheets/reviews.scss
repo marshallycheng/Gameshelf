@@ -145,6 +145,11 @@
   font-size: 14px;
   cursor: pointer;
   line-height: 6px;
+  outline: none;
+}
+
+.review-edit-button:active, .review-delete-button:active {
+  box-shadow: 0 0 2px rgb(19, 17, 17);
 }
 
 .review-edit-button {
@@ -185,6 +190,11 @@
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
+  outline: none;
+}
+
+.review-form-button:active {
+  box-shadow: 0 0 3px rgb(19, 17, 17);
 }
 
 

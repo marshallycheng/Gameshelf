@@ -10,6 +10,7 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount(){
+
     this.props.fetchUser(this.props.userId);
     
     this.props.fetchGames();
@@ -63,6 +64,7 @@ class UserProfile extends React.Component {
       const { games, user} = this.props;
       const reviewText = (user.review_ids.length === 1) ? "review" : "reviews";
       const favoriteText = (user.favorited_game_ids.length === 1) ? "favorite" : "favorites";
+ 
       const favoritedGames = games.length > 0 
       ? games.map(game => {
           if (game) {

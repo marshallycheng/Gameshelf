@@ -11,7 +11,9 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_GAME:
       return merge({}, state, action.users);
     case RECEIVE_USER:
-      return merge({}, state, { [action.user.id]: action.user});
+      const oldState = merge({},state);
+      delete oldState[action.user.id];
+      return merge({}, oldState, { [action.user.id]: action.user});
     default:
       return state;
   }

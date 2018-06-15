@@ -1,0 +1,1 @@
+json.extract! @favorite, :id, :game_id, :user_id

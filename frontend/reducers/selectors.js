@@ -17,3 +17,7 @@ export const selectFavoritedGames = (state, user) => {
     return [];
   }
 };
+
+export const selectFavorite = (state, gameId) => {
+  return Object.values(state.entities.favorites).filter(favorite => (favorite.game_id === parseInt(gameId)))[0];
+};
