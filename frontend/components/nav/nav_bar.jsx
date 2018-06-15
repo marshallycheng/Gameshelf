@@ -1,5 +1,5 @@
 import React from 'react';
-import {mainLogo, searchIcon, profileIcon} from '../logo';
+import {mainLogo, searchIcon, profileIcon, githubLogo} from '../logo';
 import { Redirect, Link, NavLink } from 'react-router-dom';
 import GameSearchContainer from '../game_search/game_search_container';
 
@@ -36,7 +36,7 @@ class NavBar extends React.Component {
 
         <NavLink exact to="/" className='link' activeClassName="active">Discover</NavLink>
 
-        <div className='github-link' onClick={this.goGithub}>Github</div>
+        <div className='github-link' onClick={this.goGithub}>{githubLogo} Github</div>
 
         <NavLink
           to={`/users/${this.props.currentUserId}`} 

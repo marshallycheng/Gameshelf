@@ -117,6 +117,12 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   border-radius: 24px;
   margin-right: 2px; }
 
+.github-logo {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  top: 5px; }
+
 .game-list {
   margin-top: 12px;
   width: 100%;
