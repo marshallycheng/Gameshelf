@@ -50,7 +50,8 @@ Search was implemented with a fuzzy search algorithm to allow users to find what
     @games = Game.where("lower(title) LIKE ?", fuzzy_query).limit(10)
   end
 ```
-Incorporated debounce into the search feature in order to make fewer queries and also not overwhelm the user with unnecessary results. (Needed to persist the event due to how React handles Event Pooling) [Read more](https://reactjs.org/docs/events.html) 
+Incorporated debounce into the search feature in order to make fewer queries and also not overwhelm the user with unnecessary results. (Needed to persist the event due to how React handles Event Pooling) 
+[Read more about Events in React](https://reactjs.org/docs/events.html) 
 
 ```javascript
 //Debounce function
