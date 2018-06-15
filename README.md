@@ -23,20 +23,8 @@ Gameshelf is a web application for game reviews, inspired by Pinterest. Gameshel
   
 ![Discover page](https://i.imgur.com/buh0oeI.gif)
 
-
-## Technologies Used
-
-* Backend
-  * Database: PostgreSQL
-  * Routing, Controllers, and Models: Rails
-  * Auth: BCrypt
-* Frontend 
-  * React with Redux for state management
-  * jQuery(only for AJAX requests)
-  * jBuilder for backend requests
-  * Styling and animations done with SCSS/CSS
   
-## Hightlights
+## Highlights
 
 ### Search
 
@@ -141,6 +129,18 @@ this.bgImageArray = [
 	  }
    }
 ```
+
+## Technologies Used
+
+* Backend
+  * Database: PostgreSQL
+  * Routing, Controllers, and Models: Rails
+  * Auth: BCrypt
+* Frontend 
+  * React with Redux for state management
+  * jQuery(only for AJAX requests)
+  * jBuilder for backend requests
+  * Styling and animations done with SCSS/CSS
 
 
 ### Future Features
