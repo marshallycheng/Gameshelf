@@ -15,7 +15,7 @@ class NavBar extends React.Component {
   }
 
   goGithub(){
-    window.location = 'https://github.com/marshallycheng/FSP-Gameshelf';
+    window.location = 'https://github.com/marshallycheng/Gameshelf';
   }
 
 
