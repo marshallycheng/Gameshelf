@@ -3,6 +3,10 @@
 
 Gameshelf is a web application for game reviews, inspired by Pinterest. Gameshelf is intended to be a hub for game-lovers to share their opinions on games they love, hate, and anywhere in between. The project was built in about 70 hours of work, though I intend to continue adding features in the future.
 
+
+![Home page](https://i.imgur.com/jGoi86m.png)
+
+
 ## Features
 
 * Games 
@@ -46,8 +50,6 @@ Search was implemented with a fuzzy search algorithm to allow users to find what
     @games = Game.where("lower(title) LIKE ?", fuzzy_query).limit(10)
   end
 ```
-![Search](https://i.imgur.com/71164hf.png)
-
 Incorporated debounce into the search feature in order to make fewer queries and also not overwhelm the user with unnecessary results. (Needed to persist the event due to how React handles Event Pooling) [Read more](https://reactjs.org/docs/events.html) 
 
 ```javascript
@@ -64,6 +66,11 @@ Incorporated debounce into the search feature in order to make fewer queries and
   //input with onChange event that passes thunk action as callback to debounce
   <input type="text" maxLength="100" placeholder="Search" onChange={this.debounceSearch(this.performSearch, 250)}/>
 ```
+
+
+![Search](https://i.imgur.com/71164hf.png)
+
+
 ### Login Background
 
 One thing I really wanted to incorporate was a animated background. Infinite-scroll backgrounds are normally made with simple, repeating patterns. Beautiful splash arts are the exact opposite. In order to make an infinite-scroll background with stunning landscapes, I created a keyframe css animation to pan across an image gradually. I also used a function to iterate through a number of backgrounds that would gradually transition from one to the other. I chose large, high-resolution images in order to increase the time it takes to hit the edge of the image. Lastly, I added a css property to pan back and forth at the edge of the image to avoid awkward transitions from hitting the edge of images. 
@@ -134,7 +141,6 @@ this.bgImageArray = [
    }
 ```
 
-![Review Creation](https://i.imgur.com/jGoi86m.png)
 
 ### Future Features
 
