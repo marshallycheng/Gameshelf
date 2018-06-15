@@ -112,22 +112,23 @@ this.bgImageArray = [
 
   backgroundSequence() {
     {/* Credit to Dudley Storey for the original code snippet */}
-	  window.clearTimeout();
-	  let k = 0;
+    window.clearTimeout();
+    let k = 0;
 
     for (let i = 0; i < this.bgImageArray.length; i++) {
-		  setTimeout(() => {
-			  document.getElementsByClassName('session-background')[0].style.background = "url(" + this.bgImageArray[k] + ") no-repeat center center fixed";
-			  document.getElementsByClassName('session-background')[0].style.backgroundSize ="150% 150%";
-			  document.getElementsByClassName('session-background')[0].style.backgroundPosition = "0px";
-		    if ((k + 1) === this.bgImageArray.length) {
+      setTimeout(() => {
+        document.getElementsByClassName('session-background')[0].style.background = 
+          "url(" + this.bgImageArray[k] + ") no-repeat center center fixed";
+	document.getElementsByClassName('session-background')[0].style.backgroundSize ="150% 150%";
+        document.getElementsByClassName('session-background')[0].style.backgroundPosition = "0px";
+        if ((k + 1) === this.bgImageArray.length) {
           setTimeout(() =>  this.backgroundSequence(), (this.secs * 1000))
         } else {
           k++;
         }
-		  }, (this.secs * 1000) * i);
-	  }
-   }
+      }, (this.secs * 1000) * i);
+    }
+  }
 ```
 
 ## Technologies Used
