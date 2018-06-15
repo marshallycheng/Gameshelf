@@ -14,19 +14,18 @@ class SessionBackground extends React.Component {
       "https://i.imgur.com/er56xcK.jpg",
       "https://i.imgur.com/bG0SSdk.jpg"
     ];
-    this.base = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/full-";
     this.secs = 5;
 
     this.bgImageArray.forEach((img) => {
       new Image().src = img;
-      // caches images, avoiding white flash between background replacements
+      // caches images
     });
 
     this.backgroundSequence();
   }
 
   backgroundSequence() {
-    {/* Credit to Dudley Storey for this Cross-Fade Background effect */}
+    {/* Credit to Dudley Storey for the original code snippet */}
 	  window.clearTimeout();
 	  let k = 0;
 

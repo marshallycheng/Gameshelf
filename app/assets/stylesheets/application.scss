@@ -36,14 +36,13 @@ body, #root {
   display: flex;
   flex-direction: column;
 }
+
 .session-background {
   background:
-    /* top, transparent black, faked with gradient */
     linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    /* bottom, image */
     url('https://images3.alphacoders.com/716/716166.jpg');
   background-size: cover;
   background-repeat: repeat-x;

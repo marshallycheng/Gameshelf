@@ -119,7 +119,7 @@ class UserProfile extends React.Component {
     } else {
       return (
         <div>
-          loading
+
         </div>
       );
     }
