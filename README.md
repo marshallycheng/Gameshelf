@@ -62,7 +62,7 @@ Incorporated debounce into the search feature in order to make fewer queries and
 
 ### Login Background
 
-One thing I really wanted to incorporate was a animated background. Infinite-scroll backgrounds are normally made with simple, repeating patterns. Beautiful splash arts are the exact opposite. In order to make an infinite-scroll background with stunning landscapes, I created a keyframe css animation to pan across an image gradually. I also used a function to iterate through a number of backgrounds that would gradually transition from one to the other. I chose large, high-resolution images in order to increase the time it takes to hit the edge of the image. Lastly, I added a css property to pan back and forth at the edge of the image to avoid awkward transitions from hitting the edge of images. 
+One thing I really wanted for the app was an animated login screen. Infinite-scroll backgrounds are normally made with simple, repeating patterns. Beautiful splash arts are the exact opposite. In order to make an infinite-scroll background with stunning landscapes, I created a keyframe css animation to pan across an image gradually. I also used a function to iterate through a number of backgrounds that would gradually transition from one to the other. I chose large, high-resolution images and enlarged them in order to increase the time it takes to hit the edge of the image. Lastly, I added a css property to pan back and forth at the edge of the image to avoid awkward transitions from hitting the image boundary.
 
 ![Login Background](https://i.imgur.com/9l1m5lp.gif)
 
