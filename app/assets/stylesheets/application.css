@@ -473,7 +473,8 @@ fieldset {
   position: absolute; }
 
 .review-form-rating > label {
-  color: #888888; }
+  color: #888888;
+  float: right; }
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 .container-content .game-details {
@@ -530,7 +531,9 @@ fieldset {
 
 .review-form-rating {
   height: 35px;
-  width: 150px; }
+  width: 150px;
+  position: relative;
+  left: -10px; }
 
 .game-reviews-list {
   list-style: none; }
