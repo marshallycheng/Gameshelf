@@ -21,7 +21,8 @@ input[type=text],
 input[type=email],
 input[type=tel],
 input[type=url],
-input[type=search] {
+input[type=search],
+input[type=radio] {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -472,8 +473,7 @@ fieldset {
   position: absolute; }
 
 .review-form-rating > label {
-  color: #888888;
-  float: right; }
+  color: #888888; }
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 .container-content .game-details {
@@ -530,9 +530,7 @@ fieldset {
 
 .review-form-rating {
   height: 35px;
-  width: 150px;
-  position: relative;
-  left: -10px; }
+  width: 150px; }
 
 .game-reviews-list {
   list-style: none; }

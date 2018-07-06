@@ -17,7 +17,6 @@
 
 .review-form-rating > label {
   color: $ashgrey;
-  float: right;
 }
 
 /***** CSS Magic to Highlight Stars on Hover *****/
@@ -79,8 +78,6 @@
 .review-form-rating {
   height: 35px;
   width: 150px;
-  position: relative;
-  left: -10px;
 }
 
 .game-reviews-list {
