@@ -76,7 +76,7 @@ class GameReviewForm extends React.Component {
             <div className="review-left">
               {header}
 
-              <div className="review-form-rating">
+              <fieldset className="review-form-rating">
                 <input type="radio" id="star5" name="rating" value="5" />
                 <label className = "full" htmlFor="star5" title="Awesome - 5 stars" onClick={this.updateRating(5)}></label>
                 <input type="radio" id="star4" name="rating" value="4"/>
@@ -87,7 +87,7 @@ class GameReviewForm extends React.Component {
                 <label className = "full" htmlFor="star2" title="Kinda bad - 2 stars" onClick={this.updateRating(2)}></label>
                 <input type="radio" id="star1" name="rating" value="1"/>
                 <label className = "full" htmlFor="star1" title="Sucks big time - 1 star" onClick={this.updateRating(1)}></label>
-              </div>
+              </fieldset>
             </div>
             <div className="purchase-link">
               {purchaseButton}
