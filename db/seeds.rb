@@ -344,7 +344,7 @@ GAME_RATINGS = [
 GAME_RELEASE_DATES = [
   "July 25, 2017",
   "October 27, 2009",
-  "December 21, 2007",
+  "March 23, 2017",
   "March 11, 2014",
   "August 21, 2012",
   "September 17, 2013",
